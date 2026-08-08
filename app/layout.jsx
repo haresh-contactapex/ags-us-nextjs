@@ -9,7 +9,7 @@ import "./globals.css";
 // for an example) — that's the main SEO win over the old SPA, which had
 // one static <title> for every route.
 export const metadata = {
-  metadataBase: new URL("https://agswebsite.com/agsnew/nextjs"),
+  metadataBase: new URL("https://ags-us-nextjs.vercel.app"),
   title: {
     default: "Apex Global Solutions",
     template: "%s | Apex Global Solutions",
