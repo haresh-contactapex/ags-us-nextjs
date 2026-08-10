@@ -1,6 +1,6 @@
 import { listPublishedSlugs } from "@/lib/blog";
 
-const BASE_URL = "https://agswebsite.com/agsnew/nextjs";
+const BASE_URL = "https://ags-us-nextjs.vercel.app";
 
 const routes = [
   "",

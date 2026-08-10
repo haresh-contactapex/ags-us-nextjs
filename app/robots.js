@@ -4,6 +4,6 @@ export default function robots() {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://agswebsite.com/agsnew/nextjs/sitemap.xml",
+    sitemap: "https://ags-us-nextjs.vercel.app/sitemap.xml",
   };
 }
