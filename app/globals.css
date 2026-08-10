@@ -47,35 +47,58 @@
   }
   .heading1 {
     @apply mb-6 font-playfairdisplay font-normal 
-        text-[36px] lg:text-[48px] 2xl:text-[70px] 
+        text-[36px] lg:text-[48px] 2xl:text-[48px] 
         leading-[1.3] lg:leading-[1.3] 2xl:leading-[1.3]
         text-[#06283c];
   }
   .heading2 {
     @apply mb-6 font-playfairdisplay font-normal 
-        text-[36px] lg:text-[46px] 2xl:text-[60px] 
+        text-[36px] lg:text-[46px] 2xl:text-[46px] 
         leading-[1.3] lg:leading-[1.3] 2xl:leading-[1.3]
         text-[#06283c];
   }
   .heading3 {
     @apply mb-6 font-playfairdisplay font-normal 
-        text-[30px] lg:text-[36px] 2xl:text-[48px] 
+        text-[30px] lg:text-[36px] 2xl:text-[36px] 
         leading-[1.3] lg:leading-[1.3] 2xl:leading-[1.3]
         text-[#06283c];
   }
   .linkClass {
     @apply text-[#f3763a] hover:text-[#333333] font-semibold;
   }
+  .blog-content h2 {
+    @apply mt-8 mb-3 font-playfairdisplay font-normal text-[28px] text-[#06283c];
+  }
+  .blog-content h3 {
+    @apply mt-6 mb-2 font-playfairdisplay font-normal text-[22px] text-[#06283c];
+  }
+  .blog-content p {
+    @apply mb-4;
+  }
+  .blog-content ul {
+    @apply mb-4 pl-6 list-disc;
+  }
+  .blog-content ol {
+    @apply mb-4 pl-6 list-decimal;
+  }
+  .blog-content blockquote {
+    @apply my-4 pl-4 border-[#f3763a] border-l-4 text-[#333] italic;
+  }
+  .blog-content a {
+    @apply text-[#f3763a] hover:text-[#333333] underline;
+  }
+  .blog-content img {
+    @apply my-4 rounded max-w-full;
+  }
   .MainContainer {
-    @apply mx-auto xl:max-w-[1188px] 2xl:max-w-[1552px] max-w-7xl
+    @apply mx-auto max-w-[1190px] px-[25px]
           after:content-[''] after:table after:clear-both
-          px-[25px];
+          
   }
   .NavFonts {
     @apply [&>*]:text-[16px] 
         [&>*]:lg:text-[13px]
-        [&>*]:xl:text-[14px]
-        [&>*]:2xl:text-[18px];
+        [&>*]:xl:text-[15px]       
   }
 
   .FooterLinks {

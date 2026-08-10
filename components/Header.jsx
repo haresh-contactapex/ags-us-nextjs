@@ -1,12 +1,27 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Logo from "@/assets/images/apex_logo.png";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState(null);
+
+
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+  const handleScroll = () => {
+    setScrolled(window.scrollY > 50);
+  };
+
+  window.addEventListener("scroll", handleScroll);
+
+  return () => {
+    window.removeEventListener("scroll", handleScroll);
+  };
+}, []);
+
 
   const toggleMenu = (menu) => {
     setActive(active === menu ? null : menu);
@@ -135,10 +150,15 @@ const Header = () => {
   ];
 
   return (
-    <header className="top-0 z-50 sticky bg-white/80 shadow-2xs backdrop-blur">
+
+    <header
+  className={`sticky top-0 z-50 bg-white/80 shadow-2xs backdrop-blur transition-all duration-100 ${
+    scrolled ? "py-[2px]" : "py-4 scrolled"
+  }`}
+>
     
     {/* <div className="mx-auto px-4 py-4 2xl:max-w-[1552px] max-w-7xl"> */}
-    <div className="px-4 py-4 MainContainer">
+    <div className="px-4 py-0 MainContainer">
         <div className="flex justify-between items-center">
           {/* LOGO */}
           <Link href="/" className="navbar-brand">
@@ -169,7 +189,12 @@ const Header = () => {
             </div>
 
             {/* DESKTOP MENU */}
-            <nav className="hidden lg:flex justify-end gap-4 lg:gap-2 2xl:gap-8 xl:gap-6 [&>*]:font-[500] [&>*]:hover:text-[#f3763a] [&>*]:text-[#333333] NavFonts">
+            <nav className="hidden lg:flex justify-end gap-4 xl:gap-4 
+            [&>*]:font-[500] [&>*]:hover:text-[#f3763a] 
+            [&>*]:text-[#333333] NavFonts">
+              <Link href="/blog" className="hover:text-black leading-[42px]">
+                Blog
+              </Link>
               {menuData.map((menu) => (
                 <div key={menu.key} className="group relative">
                   <button className="hover:text-black leading-[42px]">
@@ -225,6 +250,12 @@ const Header = () => {
       {/* MOBILE MENU */}
       {open && (
         <div className="lg:hidden space-y-4 bg-white px-6 py-4 border-t">
+          <Link
+            href="/blog"
+            className="block font-medium text-[#333333] hover:text-[#f3763a]"
+          >
+            Blog
+          </Link>
           {menuData.map((menu) => (
             <div key={menu.key}>
               <button

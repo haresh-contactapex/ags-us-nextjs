@@ -7,6 +7,7 @@ import "aos/dist/aos.css";
 import images from "@/assets/images/images";
 import { submitQuoteRequest } from "@/api/contactApi";
 import Recaptcha from "@/components/Recaptcha";
+import Image from "next/image";
 
 const initialFormData = {
   first_name: "",
@@ -121,9 +122,9 @@ export default function Home() {
             className="col-span-1 md:col-span-5 md:text-left text-center"
             data-aos="fade-right"
           >
-            <h2 className="heading2">
+            <h1 className="heading2">
               A Digital Marketing and custom Web Development Company.
-            </h2>
+            </h1>
 
             <p className="text-[#333] text-[18px] lg:text-[24px]">
               Our expertise lies in making creative <strong>websites</strong>{" "}
@@ -131,11 +132,13 @@ export default function Home() {
             </p>
           </div>
 
-          <img
+          <Image
             alt="Banner"
             className="col-span-1 md:col-span-5 w-full hover:scale-105 transition duration-500"
             src={images.bannerImage.src}
-          />
+            width={609}
+            height={538}
+          />         
         </div>
       </section>
       {/* ================= WHAT WE DO ================= */}
@@ -322,18 +325,24 @@ export default function Home() {
         </div>
       </section>
       {/* ============================================ */}
-      <img
+      <Image
         src={images.homeSeperatorOne.src}
         className="hidden xl:block mx-auto mt-[-140px] mb-[-70px] max-w-[442px] translate-x-[30%]"
+        alt="Seperator Dotted Line"
+        width={1200}
+        height={800}
       />
       {/* ================BRANDING SECTION====================*/}
       <section className="bg-[#f9f9f9] py-[40px] lg:py-[60px]">
-        <div className="space-y-24 mx-auto px-6 2xl:max-w-[1552px] max-w-7xl">
+        <div className="space-y-24 mx-auto px-6 MainContainer">
           <div className="items-center gap-[20px] md:gap-16 grid md:grid-cols-2">
-            <img
+            <Image
               className="aos-init aos-animate"
               data-aos="fade-right"
               src={images.brandingImage.src}
+              alt="Branding Image"
+              width={1200}
+              height={800}
             />
             <div className="aos-init aos-animate" data-aos="fade-left">
               <h2 className="md:text-left text-center heading1">Branding</h2>
@@ -352,9 +361,12 @@ export default function Home() {
       </section>
 
       {/* ============================================ */}
-      <img
+      <Image
         src={images.homeSeperatorTwo.src}
         className="hidden xl:block mx-auto mt-[-100px] mb-[-100px] max-w-[460px] translate-x-[0]"
+        alt="Seperator Dotted Line"
+        width={1200}
+        height={800}
       />
       {/* =================WEBSITES SECTION================== */}
       <section className="py-[40px] lg:py-[60px]">
@@ -379,38 +391,50 @@ export default function Home() {
                 the success of your websites.
               </p>
             </div>
-            <img
+            <Image
               className="aos-init aos-animate"
               data-aos="fade-left"
               src={images.websiteImage.src}
+              alt="Website Development"
+              width={1200}
+              height={800}
             />
           </div>
         </div>
       </section>
 
       {/* ============================================ */}
-      <img
+      <Image
         src={images.homeSeperatorThree.src}
         className="hidden xl:block mx-auto mt-[-50px] mb-[-170px] max-w-[442px] translate-x-[0%]"
+        width={1200}
+              height={800}
+              alt="Seperator Dotted Line"
       />
       {/* ===================APPS SECTION==================== */}
       <section className="bg-[#f9f9f9] py-[40px] lg:py-[60px]">
         <div className="space-y-24 MainContainer">
           <div className="flex flex-col-reverse items-center gap-[20px] md:gap-16 md:grid md:grid-cols-2">
-            <img
+            <Image
               className="aos-init aos-animate"
               data-aos="fade-right"
               src={images.appImage.src}
+              width={1200}
+              height={800}
+              alt="App Development"
             />
             <div className="aos-init aos-animate" data-aos="fade-left">
               <h2 className="md:text-left text-center heading1">Apps</h2>
               <p>
                 We are a successful app development company that caters to all
                 your needs. Whether you are in the need of iOS Apps or Android
-                Apps, our
-                <a href="/agsnew/mobile-app-development">
-                  mobile phone app development services
-                </a>
+                Apps, our 
+                {" "}<Link
+                    className="font-semibold text-[#f3763a] hover:text-[#06283c]"
+                    href="/mobile-app-development"
+                  >
+                    mobile phone app development services
+                  </Link>{" "}
                 will transform your business in a manner unimagined. We
                 amalgamate the latest technologies while bringing to you
                 top-notch and customized products each time.
@@ -421,9 +445,12 @@ export default function Home() {
       </section>
 
       {/* ============================================ */}
-      <img
+      <Image
         src={images.homeSeperatorFour.src}
         className="hidden xl:block mx-auto mt-[-100px] mb-[-70px] max-w-[442px] translate-x-[30%]"
+        alt="Seperator Dotted Line"
+        width={1200}
+        height={800}
       />
       {/* =================DIGITAL MARKETING=================== */}
       <section className="py-[40px] lg:py-[60px]">
@@ -442,10 +469,13 @@ export default function Home() {
                 will ensure that your followers remain engaged at all times.
               </p>
             </div>
-            <img
+            <Image
               className="aos-init aos-animate"
               data-aos="fade-left"
               src={images.digitalMarketingImage.src}
+              width={1200}
+              height={800}
+              alt="Digital Marketing Image"
             />
           </div>
         </div>
@@ -468,53 +498,82 @@ export default function Home() {
           <div className="flex lg:flex-row flex-col justify-between items-center gap-3 lg:gap-10">
             {/* Step 1 */}
             <div className="relative flex flex-col items-center">
-              <div className="flex justify-center items-center bg-white border-2 border-gray-800 border-dashed rounded-full w-[140px] xl:w-[197px] h-[140px] xl:h-[197px] rotate-90 origin-center animate-rotate">
-                <img
-                  className="rotate-90 origin-center animate-rotate-inverse"
+              <div className="
+              flex justify-center items-center bg-white border-2 
+              border-gray-800 border-dashed rounded-full w-[140px] 
+              xl:w-[197px] h-[140px] xl:h-[197px] rotate-90 
+              origin-center animate-rotate
+              z-[10]
+              ">
+                <Image
+                  className="rotate-[270deg] origin-center animate-rotate-inverse"
                   src={images.ourMethodologyOne.src}
+                  width={1200}
+              height={800}
+                  alt="Concept Image"
                 />
               </div>
               <p className="mt-4 font-semibold text-gray-700">CONCEPT</p>
               {/* Arrow */}
-              <img
+              <Image
                 src={images.methodologyArrow.src}
-                className="lg:top-[70px] xl:top-[103px] right-[-97px] static lg:absolute mt-[52px] lg:mt-[0px] text-yellow-500 text-2xl rotate-90 lg:rotate-0 -translate-y-1/"
+                className="lg:top-[70px] xl:top-[103px] right-[-97px] static lg:absolute mt-[52px] lg:mt-[0px] text-yellow-500 
+                text-2xl rotate-90 lg:rotate-0 -translate-y-1/2  "
+                width={120}
+              height={80}
+              alt="Methodology Arrow"
               />
             </div>
             {/* Step 2 */}
             <div className="relative flex flex-col items-center">
-              <div className="flex justify-center items-center bg-white border-2 border-gray-800 border-dashed rounded-full w-[140px] xl:w-[197px] h-[140px] xl:h-[197px] rotate-90 origin-center animate-rotate">
-                <img
+              <div className="z-[10] flex justify-center items-center bg-white border-2 border-gray-800 border-dashed rounded-full w-[140px] xl:w-[197px] h-[140px] xl:h-[197px] rotate-90 origin-center animate-rotate">
+                <Image
                   className="rotate-90 origin-center animate-rotate-inverse"
                   src={images.ourMethodologyTwo.src}
+                  alt="Methodology Step 2"
+                  width={1200}
+              height={800}
+
                 />
               </div>
               <p className="mt-4 font-semibold text-gray-700">DESIGN</p>
-              <img
+              <Image
                 src={images.methodologyArrow.src}
                 className="lg:top-[70px] xl:top-[103px] right-[-97px] static lg:absolute mt-[52px] lg:mt-[0px] text-yellow-500 text-2xl rotate-90 lg:rotate-0 -translate-y-1/2"
+              width={120}
+              height={80}
+              alt="Methodology Arrow"
               />
             </div>
             {/* Step 3 */}
             <div className="relative flex flex-col items-center">
-              <div className="flex justify-center items-center bg-white border-2 border-gray-800 border-dashed rounded-full w-[140px] xl:w-[197px] h-[140px] xl:h-[197px] rotate-90 origin-center animate-rotate">
-                <img
+              <div className="z-[10] flex justify-center items-center bg-white border-2 border-gray-800 border-dashed rounded-full w-[140px] xl:w-[197px] h-[140px] xl:h-[197px] rotate-90 origin-center animate-rotate">
+                <Image
                   className="rotate-90 origin-center animate-rotate-inverse"
                   src={images.ourMethodologyThree.src}
+                  alt="Methodology Step 3"
+                  width={1200}
+                  height={800}
                 />
               </div>
               <p className="mt-4 font-semibold text-gray-700">DEVELOPMENT</p>
-              <img
+              <Image
                 src={images.methodologyArrow.src}
                 className="lg:top-[70px] xl:top-[103px] right-[-97px] static lg:absolute mt-[52px] lg:mt-[0px] text-yellow-500 text-2xl rotate-90 lg:rotate-0 -translate-y-1/2"
+                alt="Methodology Arrow"
+                width={120}
+                height={80}
               />
             </div>
             {/* Step 4 */}
             <div className="flex flex-col items-center">
-              <div className="flex justify-center items-center bg-white border-2 border-gray-800 border-dashed rounded-full w-[140px] xl:w-[197px] h-[140px] xl:h-[197px] rotate-90 origin-center animate-rotate">
-                <img
-                  className="rotate-90 origin-center animate-rotate-inverse"
+              <div className="z-[10] flex justify-center items-center bg-white border-2 border-gray-800 border-dashed rounded-full w-[140px] xl:w-[197px] h-[140px] xl:h-[197px] rotate-90 origin-center animate-rotate">
+                <Image
+                  className="rotate-270 origin-center animate-rotate-inverse"
                   src={images.ourMethodologyFour.src}
+                  alt="Methodology Step 4"
+                  width={1200}
+              height={800}
                 />
               </div>
               <p className="mt-4 font-semibold text-gray-700">LAUNCH</p>
@@ -524,16 +583,19 @@ export default function Home() {
       </section>
       {/* ============================================ */}
       <section className="py-[40px] lg:py-[60px]">
-        <div className="space-y-24 mx-auto px-6 2xl:max-w-[1552px] max-w-7xl">
+        <div className="space-y-24 mx-auto px-6 MainContainer">
           <div className="items-center gap-4 grid grid-cols-1 md:grid-cols-2">
             <div
               className="flex md:flex-row flex-col justify-end min-h-[500px] align-middle aos-init aos-animate"
               data-aos="fade-left"
             >
-              <img
+              <Image
                 className="left-[0] md:absolute relative mx-auto mb-4 md:mb-0 w-[200px] md:w-[350px] aos-init aos-animate"
                 data-aos="fade-right"
                 src={images.requestQuoteImage.src}
+                alt="Request a Quote"
+                width={1200}
+              height={800}
               />
 
               <div className="flex flex-col justify-center align-middle">
@@ -550,9 +612,9 @@ export default function Home() {
               {/* form start */}
               <div className="p-0 md:p-8 w-full md:max-w-4xl">
                 {/* Title */}
-                <h1 className="mb-10 font-serif text-[36px] text-slate-800 lg:text-[46px] 2xl:text-[70px] text-center leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">
+                <h3 className="mb-10 font-serif text-[36px] text-slate-800 lg:text-[46px] 2xl:text-[70px] text-center leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">
                   Request a Quote
-                </h1>
+                </h3>
                 {/* Form */}
                 <form className="space-y-6" onSubmit={handleSubmit} noValidate>
                   {/* Row 1 */}
@@ -717,7 +779,7 @@ export default function Home() {
         <div className="space-y-24 mx-auto px-6 2xl:max-w-[1552px] max-w-7xl">
           <div className="items-center">
             <div className="aos-init aos-animate" data-aos="fade-left">
-              <h2 className="mb-[50px] text-center heading1">
+              <h2 className="mb-[50px] text-center heading3">
                 Let’s ride together to reach your Goal
               </h2>
               <div className="my-8 text-center">
@@ -749,7 +811,11 @@ export default function Home() {
                 </Link>
               </div>
               <div className="text-center">
-                <img className="mx-auto" src={images.cycleImage.src} />
+                <Image className="mx-auto" src={images.cycleImage.src} 
+                alt="Cycle Image"
+                width={428}
+              height={202}
+              />
               </div>
             </div>
           </div>
