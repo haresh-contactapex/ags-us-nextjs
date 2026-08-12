@@ -1,3 +1,7 @@
+import { listPublicSlugs } from "@/lib/posts";
+import { listCategories } from "@/lib/categories";
+import { listTags } from "@/lib/tags";
+
 const BASE_URL = "https://ags-us-nextjs.vercel.app";
 
 const routes = [
@@ -11,13 +15,50 @@ const routes = [
   "/wordpress-web-development",
   "/contact-us",
   "/site-map",
+  "/blog",
 ];
 
-export default function sitemap() {
-  return routes.map((route) => ({
+export default async function sitemap() {
+  const staticEntries = routes.map((route) => ({
     url: `${BASE_URL}${route}`,
     lastModified: new Date(),
     changeFrequency: "monthly",
     priority: route === "" ? 1 : 0.7,
   }));
+
+  // A DB hiccup here should never take down the whole sitemap — fall
+  // back to just the static routes if the blog tables are unreachable.
+  try {
+    const [posts, categories, tags] = await Promise.all([
+      listPublicSlugs(),
+      listCategories(),
+      listTags(),
+    ]);
+
+    const postEntries = posts.map((post) => ({
+      url: `${BASE_URL}/blog/${post.slug}`,
+      lastModified: post.updated_at,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    }));
+
+    const categoryEntries = categories.map((category) => ({
+      url: `${BASE_URL}/blog/category/${category.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.5,
+    }));
+
+    const tagEntries = tags.map((tag) => ({
+      url: `${BASE_URL}/blog/tag/${tag.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.4,
+    }));
+
+    return [...staticEntries, ...postEntries, ...categoryEntries, ...tagEntries];
+  } catch (error) {
+    console.error("sitemap: failed to load blog entries", error);
+    return staticEntries;
+  }
 }

@@ -1,6 +1,5 @@
 import Script from "next/script";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import SiteChrome from "@/components/SiteChrome";
 import ScrollToTop from "@/components/ScrollToTop";
 import "./globals.css";
 
@@ -41,9 +40,7 @@ export default function RootLayout({ children }) {
         <Script src="https://unpkg.com/alpinejs" strategy="afterInteractive" />
 
         <ScrollToTop />
-        <Header />
-        {children}
-        <Footer />
+        <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
   );
