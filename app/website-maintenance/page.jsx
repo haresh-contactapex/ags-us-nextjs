@@ -1,5 +1,7 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
+
 import seperatorImage from "@/assets/images/page_seperator_cwd1.png";
 import webMaintenance from "@/assets/images/website-maintenance.jpg";
 
@@ -18,7 +20,7 @@ const WebsiteMaintenance = () => {
         <div className="space-y-24 mx-auto px-6 max-w-6xl">
           <div className="items-center">
             <div className="aos-init aos-animate" data-aos="fade-left">
-              <h2 className="mb-10 font-playfairdisplay font-normal text-[36px] lg:text-[46px] 2xl:text-[70px] text-center leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">
+              <h2 className="mb-10 font-playfairdisplay font-normal text-[36px] lg:text-[46px] 2xl:text-[46px] text-center leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">
                 Stay on the top by constant maintenance
               </h2>
               <p className="mx-auto max-w-3xl text-[18px] lg:text-[24px] text-center leading-[1.5]">
@@ -31,17 +33,20 @@ const WebsiteMaintenance = () => {
       </section>
       {/* Inner Page Banner:: end */}
       {/* =================SEC 1 STart========================== */}
-      <img
+      <Image
         src={seperatorImage.src}
-        className="hidden xl:block mx-auto mt-[-70px] mb-[-80px] max-w-[400px] translate-x-[10%]"
+        alt="Dotted Seperator Line"
+        className="hidden xl:block mx-auto mt-[-50px] mb-[-60px] max-w-[400px] translate-x-[10%]"
+        width={564}
+        height={289}
       />
       <section className="py-[40px] lg:py-[60px]">
         <div className="space-y-24 px-6 MainContainer">
           <div className="items-center gap-[20px] md:gap-16 grid md:grid-cols-2">
             <div className="aos-init aos-animate" data-aos="fade-right">
-              <h2 className="mb-10 font-playfairdisplay font-normal text-[36px] lg:text-[46px] 2xl:text-[70px] text-left leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">
+              <h1 className="mb-10 font-playfairdisplay font-normal text-[36px] lg:text-[46px] 2xl:text-[46px] text-left leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">
                 Website Maintenance
-              </h2>
+              </h1>
               <p className="mb-4">
                 Internet goes through sudden, unpredictable changes. Running a
                 business online can be time-consuming for you to keep up with
@@ -51,7 +56,7 @@ const WebsiteMaintenance = () => {
                 Apex Global Solutions is a{" "}
                 <a
                   className="font-[600] text-[#f3763a] hover:text-[#333333]"
-                  href="/agsnew/"
+                  href="/"
                 >
                   Web Development Company
                 </a>{" "}
@@ -61,10 +66,13 @@ const WebsiteMaintenance = () => {
               </p>
             </div>
             <div className="aos-init aos-animate">
-              <img
+              <Image
                 className="aos-init aos-animate"
+                alt="Web Development Company"
                 data-aos="fade-left"
                 src={webMaintenance.src}
+                width={878}
+                height={568}
               />
             </div>
           </div>
@@ -116,7 +124,7 @@ const WebsiteMaintenance = () => {
             For a{" "}
             <a
               className="font-[600] text-[#f3763a] hover:text-[#333333]"
-              href="/agsnew/responsive-web-development"
+              href="/responsive-web-development"
             >
               responsive web design
             </a>
@@ -146,7 +154,7 @@ const WebsiteMaintenance = () => {
                 To give your customers an effortless experience, get traffic on
                 your website and your business, we render{" "}
                 <a
-                  href="/agsnew/mobile-app-development/"
+                  href="/mobile-app-development/"
                   className="font-[600] text-[#f3763a] hover:text-[#333333]"
                 >
                   mobile app development services
@@ -178,14 +186,14 @@ const WebsiteMaintenance = () => {
         <div className="space-y-24 px-6 MainContainer">
           <div className="items-center">
             <div className="aos-init aos-animate" data-aos="fade-left">
-              <h2 className="mb-10 font-playfairdisplay font-normal text-[36px] lg:text-[46px] 2xl:text-[70px] text-center leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">
+              <h2 className="mb-10 font-playfairdisplay font-normal text-[36px] lg:text-[46px] 2xl:text-[46px] text-center leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">
                 We can repair anything on your website. <br />
                 Talk to us today
               </h2>
               <div className="my-8 text-center">
                 <Link
                   href="/contact-us/"
-                  className="flex w-fit items-center bg-orange-500 hover:bg-black mx-auto rounded-full overflow-hidden font-semibold text-white transition"
+                  className="flex items-center bg-orange-500 hover:bg-black mx-auto rounded-full w-fit overflow-hidden font-semibold text-white transition"
                 >
                   {/* Left Circle */}
                   <span className="flex justify-center items-center bg-gray-100 ml-1 rounded-full w-14 h-14">
@@ -205,7 +213,7 @@ const WebsiteMaintenance = () => {
                     </svg>
                   </span>
                   {/* Text */}
-                  <span className="px-6 py-4 text-lg tracking-wide">
+                  <span className="px-6 py-4 font-[700] text-[20px] tracking-wide">
                     CONTACT US
                   </span>
                 </Link>

@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import seperatorImage from "@/assets/images/page_seperator_cwd1.png";
 import customWebDevImage from "@/assets/images/custom-web-development.jpg";
 import checkImage from "@/assets/images/check.png";
@@ -19,7 +20,7 @@ const CustomWebDevelopment = () => {
         <div className="space-y-24 mx-auto px-6 max-w-5xl">
           <div className="items-center">
             <div className="aos-init aos-animate" data-aos="fade-left">
-              <h2 className="mb-10 font-playfairdisplay font-normal text-[36px] lg:text-[46px] 2xl:text-[70px] text-center leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">
+              <h2 className="mb-10 font-playfairdisplay font-normal text-[36px] lg:text-[46px] 2xl:text-[46px] text-center leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">
                 Let’s design your magical mark
               </h2>
               <p className="mx-auto max-w-[100%] text-[#06283b] text-[18px] lg:text-[24px] text-center leading-[1.5]">
@@ -30,32 +31,35 @@ const CustomWebDevelopment = () => {
                 >
                   Web Design Company
                 </Link>{" "}
-                that helps you create relationships with your customers through
-                a wonderful website.
+                that helps you create relationships with your customers through a wonderful website.
               </p>
             </div>
           </div>
         </div>
       </section>
       {/* Inner Page Banner:: end */}
-      <img
+      <Image
         src={seperatorImage.src}
-        alt="page separator"
-        className="hidden xl:block mx-auto mt-[-70px] mb-[-80px] max-w-[400px] translate-x-[10%]"
+        alt="Dotted page separator"
+        className="hidden xl:block mx-auto mt-[-30px] mb-[-80px] max-w-[400px] translate-x-[10%]"
+        width={390}
+        height={200}
       />
       <section className="py-[40px] lg:py-[60px]">
         <div className="space-y-24 px-6 MainContainer">
           <div className="items-center gap-[20px] md:gap-16 grid md:grid-cols-2">
-            <img
+            <Image
               className="aos-init aos-animate"
               data-aos="fade-left"
               src={customWebDevImage.src}
               alt="Custom web development"
+              width={539}
+              height={256}
             />
             <div className="aos-init aos-animate" data-aos="fade-right">
-              <h2 className="mb-10 font-playfairdisplay font-normal text-[36px] lg:text-[46px] 2xl:text-[70px] text-left leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">
+              <h1 className="mb-10 font-playfairdisplay font-normal text-[36px] lg:text-[46px] 2xl:text-[46px] text-left leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">
                 Custom Web Development
-              </h2>
+              </h1>
               <p className="mb-[20px]">
                 Does your brand need a tailor-made{" "}
                 <Link
@@ -111,7 +115,7 @@ const CustomWebDevelopment = () => {
         <div className="space-y-24 mx-auto mb-10 px-6 2xl:max-w-[1552px] max-w-7xl">
           <div className="items-center">
             <div className="aos-init aos-animate" data-aos="fade-left">
-              <h2 className="mb-10 font-playfairdisplay font-normal text-[36px] lg:text-[46px] 2xl:text-[70px] text-center leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">
+              <h2 className="mb-10 font-playfairdisplay font-normal text-[36px] lg:text-[46px] 2xl:text-[46px] text-center leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">
                 Why do you need custom web development?
               </h2>
             </div>
@@ -181,7 +185,7 @@ const CustomWebDevelopment = () => {
                 clients, our{" "}
                 <a
                   className="font-semibold text-[#f3763a] hover:text-[#06283c]"
-                  href="/agsnew/web-maintenance-services/"
+                  href="/website-maintenance/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -206,14 +210,14 @@ const CustomWebDevelopment = () => {
         <div className="space-y-24 mx-auto px-6 max-w-7xl max-w-7xl">
           <div className="items-center">
             <div className="aos-init aos-animate" data-aos="fade-left">
-              <h2 className="mb-10 font-playfairdisplay font-normal text-[36px] lg:text-[46px] 2xl:text-[70px] text-center leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">
+              <h3 className="mb-10 font-playfairdisplay font-normal text-[36px] lg:text-[46px] 2xl:text-[46px] text-center leading-[1.2] lg:leading-[1.1] 2xl:leading-[1.1]">
                 What are you waiting for! <br />
                 Let’s be in touch
-              </h2>
+              </h3>
               <div className="my-8 text-center">
                 <Link
                   href="/contact-us/"
-                  className="flex w-fit items-center bg-orange-500 hover:bg-black mx-auto rounded-full overflow-hidden font-semibold text-white transition"
+                  className="flex items-center bg-orange-500 hover:bg-black mx-auto rounded-full w-fit overflow-hidden font-semibold text-white transition"
                 >
                   {/* Left Circle */}
                   <span className="flex justify-center items-center bg-gray-100 ml-1 rounded-full w-14 h-14">
@@ -233,7 +237,7 @@ const CustomWebDevelopment = () => {
                     </svg>
                   </span>
                   {/* Text */}
-                  <span className="px-6 py-4 text-lg tracking-wide">
+                  <span className="px-6 py-4 font-[700] text-[20px] tracking-wide">
                     CONTACT US
                   </span>
                 </Link>
