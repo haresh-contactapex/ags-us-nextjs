@@ -192,9 +192,6 @@ const Header = () => {
             <nav className="hidden lg:flex justify-end gap-4 xl:gap-4 
             [&>*]:font-[500] [&>*]:hover:text-[#f3763a] 
             [&>*]:text-[#333333] NavFonts">
-              <Link href="/blog" className="hover:text-black leading-[42px]">
-                Blog
-              </Link>
               {menuData.map((menu) => (
                 <div key={menu.key} className="group relative">
                   <button className="hover:text-black leading-[42px]">
@@ -250,12 +247,6 @@ const Header = () => {
       {/* MOBILE MENU */}
       {open && (
         <div className="lg:hidden space-y-4 bg-white px-6 py-4 border-t">
-          <Link
-            href="/blog"
-            className="block font-medium text-[#333333] hover:text-[#f3763a]"
-          >
-            Blog
-          </Link>
           {menuData.map((menu) => (
             <div key={menu.key}>
               <button

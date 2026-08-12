@@ -64,31 +64,7 @@
         text-[#06283c];
   }
   .linkClass {
-    @apply text-[#f3763a] hover:text-[#333333] font-semibold;
-  }
-  .blog-content h2 {
-    @apply mt-8 mb-3 font-playfairdisplay font-normal text-[28px] text-[#06283c];
-  }
-  .blog-content h3 {
-    @apply mt-6 mb-2 font-playfairdisplay font-normal text-[22px] text-[#06283c];
-  }
-  .blog-content p {
-    @apply mb-4;
-  }
-  .blog-content ul {
-    @apply mb-4 pl-6 list-disc;
-  }
-  .blog-content ol {
-    @apply mb-4 pl-6 list-decimal;
-  }
-  .blog-content blockquote {
-    @apply my-4 pl-4 border-[#f3763a] border-l-4 text-[#333] italic;
-  }
-  .blog-content a {
-    @apply text-[#f3763a] hover:text-[#333333] underline;
-  }
-  .blog-content img {
-    @apply my-4 rounded max-w-full;
+    @apply font-semibold text-[#f3763a] hover:text-[#333333];
   }
   .MainContainer {
     @apply mx-auto max-w-[1190px] px-[25px]
@@ -104,17 +80,17 @@
   .FooterLinks {
     @apply [&>*]:text-center 
         sm:[&>*]:text-left           
-        flex flex-col gap-4 space-y-2 
+        flex flex-col gap-1 space-y-2 
         [&>*]:font-[500] 
         [&>*]:text-[#333333]
         [&>*:hover]:text-[#f3763a] 
         [&>*]:text-[16px]
         [&>*]:lg:text-[16px]
-        [&>*]:2xl:text-[20px];
+        [&>*]:2xl:text-[16px];
   }
 
   .FooterAddress {
-    @apply flex flex-col gap-4 space-y-2 
+    @apply flex flex-col gap-1 space-y-2 
          [&>*]:font-[500] 
          
          [&>*]:text-[16px]
