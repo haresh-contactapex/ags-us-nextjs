@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import seperatorImage from "@/assets/images/page_seperator_cwd1.png";
 import ecomWebImage from "@/assets/images/e-commerce-website.jpg";
 import checkImage from "@/assets/images/check.png";
@@ -19,7 +20,7 @@ const ECommerceWebDevelopment = () => {
         <div className="space-y-24 mx-auto px-6 max-w-6xl">
           <div className="items-center">
             <div className="aos-init aos-animate" data-aos="fade-left">
-              <h2 className="mb-10 font-playfairdisplay font-normal text-[36px] lg:text-[46px] 2xl:text-[70px] text-center leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">
+              <h2 className="mb-10 max-w-[1000px] font-playfairdisplay font-normal text-[36px] lg:text-[46px] 2xl:text-[46px] text-center leading-[1.2] lg:leading-[1.1] 2xl:leading-[1] max-auto">
                 Custom E-commerce Solutions, well-suited to your business need
               </h2>
               <p className="mx-auto max-w-3xl text-[#06283b] text-[18px] lg:text-[24px] text-center leading-[1.5]">
@@ -32,17 +33,20 @@ const ECommerceWebDevelopment = () => {
       </section>
       {/* Inner Page Banner:: end */}
       {/* ========================================================= */}
-      <img
+      <Image
         src={seperatorImage.src}
-        className="hidden xl:block mx-auto mt-[-70px] mb-[-80px] max-w-[400px] translate-x-[10%]"
+        className="hidden xl:block mx-auto mt-[-50px] mb-[-50px] max-w-[400px] translate-x-[10%]"
+        alt="E-commerce Website Development"
+        width={750}
+        height={339}
       />
       <section className="py-[40px] lg:py-[60px]">
         <div className="space-y-24 px-6 MainContainer">
           <div className="items-center gap-[20px] md:gap-16 grid md:grid-cols-2">
             <div className="aos-init aos-animate" data-aos="fade-right">
-              <h2 className="mb-10 font-playfairdisplay font-normal text-[36px] lg:text-[46px] 2xl:text-[70px] text-left leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">
+              <h1 className="mb-10 font-playfairdisplay font-normal text-[36px] lg:text-[46px] 2xl:text-[46px] text-left leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">
                 E-commerce Website Development
-              </h2>
+              </h1>
               <p className="mb-4">
                 In today’s time, selling online has become a necessity to keep
                 your brand alive. E-commerce is the future of business for all
@@ -51,7 +55,7 @@ const ECommerceWebDevelopment = () => {
                 ecommerce website development company, we serve you with the
                 best{" "}
                 <a
-                  href="/agsnew/responsive-web-development"
+                  href="/responsive-web-development"
                   className="font-semibold text-[#f3763a] hover:text-[#06283c]"
                 >
                   {" "}
@@ -67,19 +71,23 @@ const ECommerceWebDevelopment = () => {
                 clients with custom e-commerce websites that help in building an
                 online presence and generating higher sales.
               </p>
+              
+            </div>
+            <div className="aos-init aos-animate">
+              <Image
+                className="mb-10 aos-init aos-animate"
+                data-aos="fade-left"
+                alt="E-commerce Website Development"
+                width={750}
+                height={339}
+                src={ecomWebImage.src}
+              />
               <p>
                 We are committed to provide premium ecommerce website
                 development services to help you build user-friendly, secured
                 and end-to-end e-commerce platforms so that we can assist in a
                 seamless transformation from physical business to e-business.
               </p>
-            </div>
-            <div className="aos-init aos-animate">
-              <img
-                className="aos-init aos-animate"
-                data-aos="fade-left"
-                src={ecomWebImage.src}
-              />
             </div>
           </div>
         </div>
@@ -102,8 +110,8 @@ const ECommerceWebDevelopment = () => {
               </p>
             </div>
             <div className="aos-init aos-animate" data-aos="fade-right">
-              <p className="mb-[20px]">
-                <strong>Our comprehensive e-commerce solutions include-</strong>
+              <p className="mb-[20px] font-[600]">
+                Our comprehensive e-commerce solutions include-
               </p>
               <ul
                 className="pl-[28px] list-outside md:list-outside"
@@ -158,14 +166,13 @@ const ECommerceWebDevelopment = () => {
         <div className="space-y-24 px-6 MainContainer">
           <div className="items-center">
             <div className="aos-init aos-animate" data-aos="fade-left">
-              <h2 className="mb-10 font-playfairdisplay font-normal text-[36px] lg:text-[46px] 2xl:text-[70px] text-center leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">
-                E-commerce Websites are a powerful platform to bring you on the
-                online map.
-              </h2>
+              <h3 className="mx-auto mb-10 max-w-[1000px] font-playfairdisplay font-normal text-[36px] lg:text-[46px] 2xl:text-[46px] text-center leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">
+                E-commerce Websites are a powerful platform to bring you on the online map.
+              </h3>
               <div className="my-8 text-center">
                 <Link
                   href="/contact-us/"
-                  className="flex w-fit items-center bg-orange-500 hover:bg-black mx-auto rounded-full overflow-hidden font-semibold text-white transition"
+                  className="flex items-center bg-orange-500 hover:bg-black mx-auto rounded-full w-fit overflow-hidden font-semibold text-white transition"
                 >
                   {/* Left Circle */}
                   <span className="flex justify-center items-center bg-gray-100 ml-1 rounded-full w-14 h-14">
@@ -185,7 +192,7 @@ const ECommerceWebDevelopment = () => {
                     </svg>
                   </span>
                   {/* Text */}
-                  <span className="px-6 py-4 text-lg tracking-wide">
+                  <span className="px-6 py-4 font-[700] text-[20px] tracking-wide">
                     CONTACT US
                   </span>
                 </Link>

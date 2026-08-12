@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import seperatorImage from "@/assets/images/page_seperator_cwd1.png";
 import wordpressDevelopment from "@/assets/images/wordpress-development.jpg";
 
@@ -18,7 +19,7 @@ const WordPressWebDevelopment = () => {
         <div className="space-y-24 mx-auto px-6 max-w-6xl">
           <div className="items-center">
             <div className="aos-init aos-animate" data-aos="fade-left">
-              <h2 className="mb-10 font-playfairdisplay font-normal text-[36px] text-[36px] lg:text-[46px] 2xl:text-[70px] text-center leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">
+              <h2 className="mb-10 font-playfairdisplay font-normal text-[36px] text-[36px] lg:text-[46px] 2xl:text-[46px] text-center leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">
                 WordPress Development has been our core forte
               </h2>
               <p className="mx-auto max-w-[1070px] text-[#06283b] text-[18px] lg:text-[24px] text-center leading-[1.5]">
@@ -33,17 +34,20 @@ const WordPressWebDevelopment = () => {
       {/* Inner Page Banner:: end */}
       {/* ===============================================================================
 ==SEC 1 STart============================================================================ */}
-      <img
+      <Image
         src={seperatorImage.src}
-        className="hidden xl:block mx-auto mt-[-70px] mb-[-80px] max-w-[400px] translate-x-[10%]"
+        alt="Dotted Seperator"
+        className="hidden xl:block mx-auto mt-[-50px] mb-[-60px] max-w-[400px] translate-x-[10%]"
+        width={810}
+        height={569}
       />
       <section className="py-[40px] lg:py-[60px]">
         <div className="space-y-24 px-6 MainContainer">
           <div className="items-center gap-[20px] md:gap-16 grid md:grid-cols-2">
             <div className="aos-init aos-animate" data-aos="fade-right">
-              <h2 className="mb-10 font-playfairdisplay font-normal text-[36px] lg:text-[46px] 2xl:text-[70px] text-left leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">
+              <h1 className="mb-10 font-playfairdisplay font-normal text-[36px] lg:text-[46px] 2xl:text-[46px] text-left leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">
                 WordPress Development
-              </h2>
+              </h1>
               <p className="mb-[20px]">
                 We believe that WordPress is one of the best platforms to make
                 your digital presence felt. We carefully analyse the business
@@ -55,7 +59,7 @@ const WordPressWebDevelopment = () => {
                 A{" "}
                 <a
                   className="font-[600] text-[#f3763a] hover:text-[#333333]"
-                  href="/agsnew/who-we-are/"
+                  href="/who-we-are/"
                 >
                   leading web-development company
                 </a>{" "}
@@ -68,10 +72,13 @@ const WordPressWebDevelopment = () => {
               </p>
             </div>
             <div className="aos-init aos-animate">
-              <img
+              <Image
                 className="aos-init aos-animate"
+                alt="WordPress Development"
                 data-aos="fade-left"
                 src={wordpressDevelopment.src}
+                width={810}
+                height={569}
               />
             </div>
           </div>
@@ -155,13 +162,13 @@ const WordPressWebDevelopment = () => {
         <div className="space-y-24 px-6 MainContainer">
           <div className="items-center">
             <div className="aos-init aos-animate" data-aos="fade-left">
-              <h2 className="mb-10 font-playfairdisplay font-normal text-[36px] lg:text-[46px] 2xl:text-[70px] text-center leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">
+              <h3 className="mx-auto mb-10 max-w-[900] font-playfairdisplay font-normal text-[36px] lg:text-[46px] 2xl:text-[46px] text-center leading-[1.2] lg:leading-[1.1] 2xl:leading-[1.1]">
                 Experience the world of WordPress proficiency with us
-              </h2>
+              </h3>
               <div className="my-8 text-center">
                 <Link
-                  href="/agsnew/contact-us/"
-                  className="flex w-fit items-center bg-orange-500 hover:bg-black mx-auto rounded-full overflow-hidden font-semibold text-white transition"
+                  href="/contact-us/"
+                  className="flex items-center bg-orange-500 hover:bg-black mx-auto rounded-full w-fit overflow-hidden font-semibold text-white transition"
                 >
                   {/* Left Circle */}
                   <span className="flex justify-center items-center bg-gray-100 ml-1 rounded-full w-14 h-14">
@@ -181,7 +188,7 @@ const WordPressWebDevelopment = () => {
                     </svg>
                   </span>
                   {/* Text */}
-                  <span className="px-6 py-4 text-lg tracking-wide">
+                  <span className="px-6 py-4 font-[700] text-[20px] text-lg tracking-wide">
                     CONTACT US
                   </span>
                 </Link>
