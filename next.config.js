@@ -1,9 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    // Add remote domains here if you later load images from a CMS/API
-    // instead of bundling them locally under /assets.
-    remotePatterns: [],
+    // Blog media (featured images, inline post images) is served from
+    // Vercel Blob storage.
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "*.public.blob.vercel-storage.com",
+      },
+    ],
+    // Required as of Next.js 16 — next/image only optimizes at qualities
+    // explicitly allow-listed here.
+    qualities: [75, 90],
   },
 };
 
