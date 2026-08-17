@@ -60,14 +60,18 @@ const Footer = () => {
             Partner With Us
           </Link>
 
-          <a
+          <Link href="/blog" className="block">
+            Blog
+          </Link>
+
+          {/*<a
             href="https://apexglobalsolutionsblog.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="block"
           >
             Blog
-          </a>
+          </a>*/}
         </div>
 
         {/* LINKS 2 */}
