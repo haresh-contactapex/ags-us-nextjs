@@ -153,9 +153,11 @@ const Footer = () => {
 
       {/* LOCATIONS */}
       <div className="mt-6 px-[15px] font-[500] text-[#333] text-[16px] text-slate-600 [&>*]:hover:text-[#f3763a] text-center">
-        <Link href="/glendora">Glendora</Link> | <Link href="/irvine">Irvine</Link>{" "}
-        | <Link href="/los-angeles">Los Angeles</Link> |{" "}
-        <Link href="/pasadena">Pasadena</Link> | <Link href="/texas">Texas</Link>
+        <Link href="/glendora-web-design-company">Glendora</Link> |{" "}
+        <Link href="/irvine-web-design-company">Irvine</Link> |{" "}
+        <Link href="/los-angeles-web-design-company">Los Angeles</Link> |{" "}
+        <Link href="/pasadena-web-design-company">Pasadena</Link> |{" "}
+        <Link href="/texas-web-design-company">Texas</Link>
       </div>
 
       {/* COPYRIGHT */}
