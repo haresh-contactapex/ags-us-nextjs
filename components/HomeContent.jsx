@@ -149,7 +149,7 @@ export default function Home() {
         </h2>
         <div className="gap-10 grid md:grid-cols-3 text-left">
           <div data-aos="fade-up" data-aos-delay="100">
-            <p className="font-normal text-[#06283b] text-[20px] lg:text-[36px] xl:text-[36px] leading-[1.4]">
+            <p className="font-normal text-[#06283b] text-[20px] lg:text-[28px] xl:text-[28px] leading-[1.4]">
               We build{" "}
               <strong className="text-[#f3763a]">custom websites</strong> to
               better suit your needs and the needs of your customers.
@@ -317,7 +317,7 @@ export default function Home() {
             {/* =SVG END================== */}
           </div>
           <div data-aos="fade-up" data-aos-delay="200">
-            <p className="font-normal text-[#06283b] text-[20px] lg:text-[36px] xl:text-[36px] leading-[1.4]">
+            <p className="font-normal text-[#06283b] text-[20px] lg:text-[28px] xl:text-[28px] leading-[1.4]">
               We Bring <strong className="text-[#f3763a]">Brands</strong> to
               Life with creative idea.
             </p>
@@ -379,7 +379,7 @@ export default function Home() {
                 our{" "}
                 <a
                   className="font-semibold text-[#f3763a] hover:text-[#06283c]"
-                  href="/agsnew/responsive-web-development"
+                  href="/responsive-web-development"
                 >
                   {" "}
                   website development service{" "}
@@ -483,7 +483,7 @@ export default function Home() {
 
       {/* ==================OUR METHODOLOGY SECTION===================== */}
       <section className="bg-[#f9f9f9] py-[40px] lg:py-[60px]">
-        <div className="space-y-24 mx-auto px-6 2xl:max-w-[1552px] max-w-7xl">
+        <div className="space-y-24 px-6 MainContainer">
           <div className="items-center">
             <div className="aos-init aos-animate" data-aos="fade-left">
               <h2 className="text-center heading1">Our Methodology</h2>
@@ -498,13 +498,7 @@ export default function Home() {
           <div className="flex lg:flex-row flex-col justify-between items-center gap-3 lg:gap-10">
             {/* Step 1 */}
             <div className="relative flex flex-col items-center">
-              <div className="
-              flex justify-center items-center bg-white border-2 
-              border-gray-800 border-dashed rounded-full w-[140px] 
-              xl:w-[197px] h-[140px] xl:h-[197px] rotate-90 
-              origin-center animate-rotate
-              z-[10]
-              ">
+              <div className="z-[10] flex justify-center items-center bg-white border-2 border-gray-800 border-dashed rounded-full w-[140px] xl:w-[197px] h-[140px] xl:h-[197px] rotate-90 origin-center animate-rotate">
                 <Image
                   className="rotate-[270deg] origin-center animate-rotate-inverse"
                   src={images.ourMethodologyOne.src}
@@ -517,8 +511,7 @@ export default function Home() {
               {/* Arrow */}
               <Image
                 src={images.methodologyArrow.src}
-                className="lg:top-[70px] xl:top-[103px] right-[-97px] static lg:absolute mt-[52px] lg:mt-[0px] text-yellow-500 
-                text-2xl rotate-90 lg:rotate-0 -translate-y-1/2  "
+                className="lg:top-[70px] xl:top-[103px] right-[-97px] static lg:absolute mt-[52px] lg:mt-[0px] text-yellow-500 text-2xl rotate-90 lg:rotate-0 -translate-y-1/2"
                 width={120}
               height={80}
               alt="Methodology Arrow"
@@ -612,7 +605,7 @@ export default function Home() {
               {/* form start */}
               <div className="p-0 md:p-8 w-full md:max-w-4xl">
                 {/* Title */}
-                <h3 className="mb-10 font-serif text-[36px] text-slate-800 lg:text-[46px] 2xl:text-[70px] text-center leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">
+                <h3 className="mb-10 font-serif text-[36px] text-slate-800 lg:text-[48px] 2xl:text-[48px] text-center leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">
                   Request a Quote
                 </h3>
                 {/* Form */}
@@ -775,17 +768,17 @@ export default function Home() {
         </div>
       </section>
       {/* ============================================ */}
-      <section className="bg-[#f9f9f9] py-[40px] lg:py-[60px] clear-both">
-        <div className="space-y-24 mx-auto px-6 2xl:max-w-[1552px] max-w-7xl">
+      <section className="clear-both bg-[#f9f9f9] py-[40px] lg:py-[60px]">
+        <div className="space-y-24 px-6 MainContainer">
           <div className="items-center">
             <div className="aos-init aos-animate" data-aos="fade-left">
-              <h2 className="mb-[50px] text-center heading3">
+              <h3 className="mb-[50px] text-center heading1">
                 Let’s ride together to reach your Goal
-              </h2>
+              </h3>
               <div className="my-8 text-center">
                 <Link
                   href="/contact-us/"
-                  className="flex w-fit items-center bg-orange-500 hover:bg-black mx-auto rounded-full overflow-hidden font-semibold text-white transition"
+                  className="flex items-center bg-orange-500 hover:bg-black mx-auto rounded-full w-fit overflow-hidden font-semibold text-white transition"
                 >
                   {/* Left Circle */}
                   <span className="flex justify-center items-center bg-gray-100 ml-1 rounded-full w-14 h-14">
@@ -805,7 +798,7 @@ export default function Home() {
                     </svg>
                   </span>
                   {/* Text */}
-                  <span className="px-6 py-4 text-lg tracking-wide">
+                  <span className="px-6 py-4 font-[700] text-[20px] tracking-wide">
                     CONTACT US
                   </span>
                 </Link>
