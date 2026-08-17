@@ -1,9 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import seperatorImage from "@/assets/images/page_seperator_cwd1.png";
 import partnerBannerImage from "@/assets/images/partner-with-us.jpg";
+import { submitPartnerRequest } from "@/api/contactApi";
+import Recaptcha from "@/components/Recaptcha";
 
 const initialFormState = {
   name: "",
@@ -16,38 +18,110 @@ const initialFormState = {
   partnershipInfo: "",
 };
 
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const PHONE_PATTERN = /^[0-9+\-() ]{7,20}$/;
+const URL_PATTERN = /^https?:\/\/[^\s]+\.[^\s]+$/i;
+
 export default function PartnerWithUsClient() {
   const [formData, setFormData] = useState(initialFormState);
-  const [status, setStatus] = useState(null); // null | "submitting" | "success" | "error"
+  const [errors, setErrors] = useState({});
+  const [submitting, setSubmitting] = useState(false);
+  const [status, setStatus] = useState(null);
+  const [recaptchaToken, setRecaptchaToken] = useState("");
+  const recaptchaRef = useRef(null);
 
   function handleChange(e) {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    setErrors((prev) => ({ ...prev, [name]: undefined }));
   }
 
   function handleReset() {
     setFormData(initialFormState);
+    setErrors({});
     setStatus(null);
+    setRecaptchaToken("");
+    recaptchaRef.current?.reset();
+  }
+
+  function validate() {
+    const newErrors = {};
+
+    if (!formData.name.trim()) newErrors.name = "Name is required.";
+    if (!formData.companyName.trim())
+      newErrors.companyName = "Company name is required.";
+
+    if (!formData.phone.trim()) {
+      newErrors.phone = "Phone is required.";
+    } else if (!PHONE_PATTERN.test(formData.phone.trim())) {
+      newErrors.phone = "Enter a valid phone number.";
+    }
+
+    if (!formData.city.trim()) newErrors.city = "City is required.";
+    if (!formData.country.trim()) newErrors.country = "Country is required.";
+
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required.";
+    } else if (!EMAIL_PATTERN.test(formData.email.trim())) {
+      newErrors.email = "Enter a valid email address.";
+    }
+
+    if (!formData.websiteUrl.trim()) {
+      newErrors.websiteUrl = "Website URL is required.";
+    } else if (!URL_PATTERN.test(formData.websiteUrl.trim())) {
+      newErrors.websiteUrl =
+        "Enter a valid URL (starting with http:// or https://).";
+    }
+
+    if (!formData.partnershipInfo.trim())
+      newErrors.partnershipInfo = "Partnership information is required.";
+
+    if (!recaptchaToken)
+      newErrors.recaptcha = "Please verify you're not a robot.";
+
+    return newErrors;
   }
 
   async function handleSubmit(e) {
     e.preventDefault();
-    setStatus("submitting");
+
+    const validationErrors = validate();
+    setErrors(validationErrors);
+    if (Object.keys(validationErrors).length > 0) return;
+
+    setSubmitting(true);
+    setStatus(null);
 
     try {
-      // Replace this with your actual submit endpoint / API route.
-      const res = await fetch("/api/partner-with-us", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+      const response = await submitPartnerRequest({
+        name: formData.name.trim(),
+        company_name: formData.companyName.trim(),
+        phone: formData.phone.trim(),
+        city: formData.city.trim(),
+        country: formData.country.trim(),
+        email: formData.email.trim(),
+        website_url: formData.websiteUrl.trim(),
+        partnership_info: formData.partnershipInfo.trim(),
+        recaptcha_token: recaptchaToken,
       });
-
-      if (!res.ok) throw new Error("Request failed");
-
-      setStatus("success");
+      setStatus({
+        type: "success",
+        message: response.message || "Thanks! We'll be in touch within 24 hours.",
+      });
       setFormData(initialFormState);
-    } catch (err) {
-      setStatus("error");
+    } catch (error) {
+      const serverErrors = error?.response?.data?.data?.errors;
+      if (serverErrors) setErrors((prev) => ({ ...prev, ...serverErrors }));
+      setStatus({
+        type: "error",
+        message:
+          error?.response?.data?.message ||
+          "Something went wrong. Please try again.",
+      });
+    } finally {
+      setSubmitting(false);
+      setRecaptchaToken("");
+      recaptchaRef.current?.reset();
     }
   }
 
@@ -143,103 +217,163 @@ export default function PartnerWithUsClient() {
         {/* Form */}
         <section className="pb-0">
           <div className="mx-auto px-6 max-w-3xl">
-            <form className="space-y-4" onSubmit={handleSubmit}>
+            <form className="space-y-4" onSubmit={handleSubmit} noValidate>
               <div className="gap-4 grid md:grid-cols-2">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Name*"
-                  required
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="bg-white px-4 border border-[#828483] w-full h-14"
-                />
+                <div>
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Name*"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="bg-white px-4 border border-[#828483] w-full h-14"
+                  />
+                  {errors.name && (
+                    <p className="mt-1 text-red-500 text-sm">{errors.name}</p>
+                  )}
+                </div>
 
-                <input
-                  type="text"
-                  name="companyName"
-                  placeholder="Company Name*"
-                  required
-                  value={formData.companyName}
-                  onChange={handleChange}
-                  className="bg-white px-4 border border-[#828483] w-full h-14"
-                />
+                <div>
+                  <input
+                    type="text"
+                    name="companyName"
+                    placeholder="Company Name*"
+                    value={formData.companyName}
+                    onChange={handleChange}
+                    className="bg-white px-4 border border-[#828483] w-full h-14"
+                  />
+                  {errors.companyName && (
+                    <p className="mt-1 text-red-500 text-sm">
+                      {errors.companyName}
+                    </p>
+                  )}
+                </div>
 
-                <input
-                  type="text"
-                  name="phone"
-                  placeholder="Phone*"
-                  required
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="bg-white px-4 border border-[#828483] w-full h-14"
-                />
+                <div>
+                  <input
+                    type="text"
+                    name="phone"
+                    placeholder="Phone*"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="bg-white px-4 border border-[#828483] w-full h-14"
+                  />
+                  {errors.phone && (
+                    <p className="mt-1 text-red-500 text-sm">{errors.phone}</p>
+                  )}
+                </div>
 
-                <input
-                  type="text"
-                  name="city"
-                  placeholder="City*"
-                  required
-                  value={formData.city}
-                  onChange={handleChange}
-                  className="bg-white px-4 border border-[#828483] w-full h-14"
-                />
+                <div>
+                  <input
+                    type="text"
+                    name="city"
+                    placeholder="City*"
+                    value={formData.city}
+                    onChange={handleChange}
+                    className="bg-white px-4 border border-[#828483] w-full h-14"
+                  />
+                  {errors.city && (
+                    <p className="mt-1 text-red-500 text-sm">{errors.city}</p>
+                  )}
+                </div>
 
-                <select
-                  name="country"
-                  value={formData.country}
-                  onChange={handleChange}
-                  className="bg-white px-4 border border-[#828483] w-full h-14"
-                >
-                  <option>United States</option>
-                </select>
+                <div>
+                  <select
+                    name="country"
+                    value={formData.country}
+                    onChange={handleChange}
+                    className="bg-white px-4 border border-[#828483] w-full h-14"
+                  >
+                    <option>United States</option>
+                  </select>
+                  {errors.country && (
+                    <p className="mt-1 text-red-500 text-sm">
+                      {errors.country}
+                    </p>
+                  )}
+                </div>
 
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email*"
-                  required
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="bg-white px-4 border border-[#828483] w-full h-14"
-                />
-              </div>
-
-              <input
-                type="url"
-                name="websiteUrl"
-                placeholder="Website URL*"
-                required
-                value={formData.websiteUrl}
-                onChange={handleChange}
-                className="bg-white px-4 border border-[#828483] w-full h-14"
-              />
-
-              <textarea
-                name="partnershipInfo"
-                rows={5}
-                placeholder="Partnership Information*"
-                required
-                value={formData.partnershipInfo}
-                onChange={handleChange}
-                className="bg-white p-4 border border-[#828483] w-full"
-              />
-
-              <div className="pt-2">
-                <div className="inline-block bg-white p-4 border border-gray-300">
-                  {/* Replace with your actual reCAPTCHA widget, e.g. react-google-recaptcha */}
-                  reCAPTCHA
+                <div>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email*"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="bg-white px-4 border border-[#828483] w-full h-14"
+                  />
+                  {errors.email && (
+                    <p className="mt-1 text-red-500 text-sm">{errors.email}</p>
+                  )}
                 </div>
               </div>
+
+              <div>
+                <input
+                  type="url"
+                  name="websiteUrl"
+                  placeholder="Website URL*"
+                  value={formData.websiteUrl}
+                  onChange={handleChange}
+                  className="bg-white px-4 border border-[#828483] w-full h-14"
+                />
+                {errors.websiteUrl && (
+                  <p className="mt-1 text-red-500 text-sm">
+                    {errors.websiteUrl}
+                  </p>
+                )}
+              </div>
+
+              <div>
+                <textarea
+                  name="partnershipInfo"
+                  rows={5}
+                  placeholder="Partnership Information*"
+                  value={formData.partnershipInfo}
+                  onChange={handleChange}
+                  className="bg-white p-4 border border-[#828483] w-full"
+                />
+                {errors.partnershipInfo && (
+                  <p className="mt-1 text-red-500 text-sm">
+                    {errors.partnershipInfo}
+                  </p>
+                )}
+              </div>
+
+              <div className="pt-2">
+                <Recaptcha
+                  ref={recaptchaRef}
+                  onChange={(token) => {
+                    setRecaptchaToken(token || "");
+                    setErrors((prev) => ({ ...prev, recaptcha: undefined }));
+                  }}
+                />
+                {errors.recaptcha && (
+                  <p className="mt-1 text-red-500 text-sm">
+                    {errors.recaptcha}
+                  </p>
+                )}
+              </div>
+
+              {status && (
+                <p
+                  className={`text-center text-sm font-semibold ${
+                    status.type === "success" ? "text-green-600" : "text-red-500"
+                  }`}
+                  role="status"
+                >
+                  {status.message}
+                </p>
+              )}
 
               <div className="flex flex-wrap justify-center gap-4 pt-8">
                 <button
                   type="submit"
-                  disabled={status === "submitting"}
+                  disabled={submitting}
                   style={buttonStyle}
                   className="bg-[#f3763a] hover:bg-[#032539] hover:opacity-90 disabled:opacity-60 py-4 pr-[32px] pl-[81px] rounded-full font-semibold text-white transition"
                 >
-                  {status === "submitting" ? "SENDING..." : "SEND"}
+                  {submitting ? "SENDING..." : "SEND"}
                 </button>
 
                 <button
@@ -251,17 +385,6 @@ export default function PartnerWithUsClient() {
                   RESET
                 </button>
               </div>
-
-              {status === "success" && (
-                <p className="pt-4 text-green-700 text-center">
-                  Thanks! We’ll be in touch within 24 hours.
-                </p>
-              )}
-              {status === "error" && (
-                <p className="pt-4 text-red-600 text-center">
-                  Something went wrong. Please try again.
-                </p>
-              )}
             </form>
           </div>
         </section>

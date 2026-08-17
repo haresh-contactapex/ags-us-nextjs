@@ -19,3 +19,13 @@ export const submitContactForm = async (formData) => {
 
   return response.data;
 };
+
+export const submitPartnerRequest = async (formData) => {
+  const response = await axios.post("/api/partner-with-us", formData, {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  return response.data;
+};
