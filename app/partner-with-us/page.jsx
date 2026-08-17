@@ -1,7 +1,4 @@
-
 import PartnerWithUsClient from "@/components/PartnerWithUsClient";
-
-//import PartnerWithUsClient from "./PartnerWithUsClient";
 
 export const metadata = {
   title: "Partner with Us - Apex Global Solutions",
