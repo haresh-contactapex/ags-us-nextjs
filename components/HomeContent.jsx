@@ -519,9 +519,9 @@ export default function Home() {
             </div>
             {/* Step 2 */}
             <div className="relative flex flex-col items-center">
-              <div className="z-[10] flex justify-center items-center bg-white border-2 border-gray-800 border-dashed rounded-full w-[140px] xl:w-[197px] h-[140px] xl:h-[197px] rotate-90 origin-center animate-rotate">
+              <div className="z-[10] flex justify-center items-center bg-white border-2 border-gray-800 border-dashed rounded-full w-[140px] xl:w-[197px] h-[140px] xl:h-[197px] rotate-[-45] origin-center animate-rotate">
                 <Image
-                  className="rotate-90 origin-center animate-rotate-inverse"
+                  className="rotate-0 origin-center animate-rotate-inverse"
                   src={images.ourMethodologyTwo.src}
                   alt="Methodology Step 2"
                   width={1200}
@@ -540,9 +540,9 @@ export default function Home() {
             </div>
             {/* Step 3 */}
             <div className="relative flex flex-col items-center">
-              <div className="z-[10] flex justify-center items-center bg-white border-2 border-gray-800 border-dashed rounded-full w-[140px] xl:w-[197px] h-[140px] xl:h-[197px] rotate-90 origin-center animate-rotate">
+              <div className="z-[10] flex justify-center items-center bg-white border-2 border-gray-800 border-dashed rounded-full w-[140px] xl:w-[197px] h-[140px] xl:h-[197px] rotate-0 origin-center animate-rotate">
                 <Image
-                  className="rotate-90 origin-center animate-rotate-inverse"
+                  className="rotate-0 origin-center animate-rotate-inverse"
                   src={images.ourMethodologyThree.src}
                   alt="Methodology Step 3"
                   width={1200}
