@@ -1,8 +1,15 @@
 import Link from "next/link";
 import Image from "next/image";
-
 import separatorImage from "@/assets/images/page_seperator_cwd1.png";
 import businessCardDesign from "@/assets/images/logo-business-card-design.jpg";
+
+export const metadata = {
+  title: "Custom Logo and Business Card Design Company in Los Angeles",
+  description: "Apex Global Solutions is an innovative custom logo design and business card designs company in Los Angeles that gives your business a mark over others.",
+};
+
+
+
 
 export default function LogoBusinessCard() {
   return (
@@ -12,9 +19,9 @@ export default function LogoBusinessCard() {
         <div className="space-y-24 mx-auto px-6 max-w-6xl">
           <div className="items-center">
             <div data-aos="fade-left">
-              <h1 className="mb-10 font-playfairdisplay font-normal text-[36px] lg:text-[46px] 2xl:text-[70px] text-center leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">
+              <h2 className="mb-10 font-playfairdisplay font-normal text-[36px] lg:text-[46px] 2xl:text-[46px] text-center leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">
                 Identify Yourself Amongst Many
-              </h1>
+              </h2>
 
               <p className="mx-auto max-w-[900px] text-[#06283b] text-[18px] lg:text-[24px] text-center leading-[1.5]">
                 Your audience wants to know why your business is different. Your
@@ -29,8 +36,10 @@ export default function LogoBusinessCard() {
       {/* Separator */}
       <Image
         src={separatorImage}
-        alt=""
+        alt="Dotted Line Seperator"
         className="hidden xl:block mx-auto mt-[-60px] mb-[-80px] max-w-[400px] translate-x-[10%]"
+        width={800}
+        height={610}
       />
 
       {/* Logo / Business Card Design */}
@@ -38,9 +47,9 @@ export default function LogoBusinessCard() {
         <div className="space-y-24 px-6 MainContainer">
           <div className="items-center gap-[20px] md:gap-16 grid md:grid-cols-2">
             <div data-aos="fade-right">
-              <h2 className="mb-10 font-playfairdisplay font-normal text-[36px] lg:text-[46px] 2xl:text-[70px] text-left leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">
+              <h1 className="mb-10 font-playfairdisplay font-normal text-[36px] lg:text-[46px] 2xl:text-[46px] text-left leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">
                 Logo/Business Card Design
-              </h2>
+              </h1>
 
               <p className="mb-4">
                 Do you want to shine unique from your competitors? Logo design
@@ -65,6 +74,8 @@ export default function LogoBusinessCard() {
               src={businessCardDesign}
               alt="Logo and business card design"
               className="w-full h-auto"
+              width={800}
+              height={610}
             />
           </div>
         </div>
@@ -72,10 +83,10 @@ export default function LogoBusinessCard() {
 
       {/* Why Logo Design */}
       <section className="bg-[#f9f9f9] py-[40px] lg:py-[60px]">
-        <div className="space-y-24 mx-auto mb-10 px-6 2xl:max-w-[1552px] max-w-7xl">
+        <div className="space-y-24 px-6 MainContainer">
           <div className="items-center">
             <div data-aos="fade-left">
-              <h2 className="mb-10 font-playfairdisplay font-normal text-[36px] lg:text-[46px] 2xl:text-[70px] text-center leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">
+              <h2 className="mb-10 font-playfairdisplay font-normal text-[36px] lg:text-[46px] 2xl:text-[46px] text-center leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">
                 Not Yet Convinced For a Logo Design?
               </h2>
             </div>
@@ -111,10 +122,10 @@ export default function LogoBusinessCard() {
 
       {/* Make Your Brand Memorable */}
       <section className="py-[40px] lg:py-[60px]">
-        <div className="space-y-24 mx-auto mb-10 px-6 2xl:max-w-[1552px] max-w-7xl">
+        <div className="space-y-24 px-6 MainContainer">
           <div className="items-center">
             <div data-aos="fade-left">
-              <h2 className="mb-10 font-playfairdisplay font-normal text-[36px] lg:text-[46px] 2xl:text-[70px] text-center leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">
+              <h2 className="mb-10 font-playfairdisplay font-normal text-[36px] lg:text-[46px] 2xl:text-[46px] text-center leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">
                 Make Your Brand Memorable
               </h2>
             </div>
@@ -160,18 +171,19 @@ export default function LogoBusinessCard() {
 
       {/* CTA */}
       <section className="bg-[#f9f9f9] py-[40px] lg:py-[60px]">
-        <div className="space-y-24 mx-auto px-6 max-w-7xl">
+        <div className="space-y-24 px-6 MainContainer">
           <div className="items-center">
             <div data-aos="fade-left">
-              <h2 className="mb-10 font-playfairdisplay font-normal text-[36px] lg:text-[46px] 2xl:text-[70px] text-center leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">
+            
+              <h3 className="mb-10 font-playfairdisplay font-normal text-[36px] lg:text-[46px] 2xl:text-[46px] text-center leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">
                 Create Your Brand Perception. <br />
                 Speak To Us Today
-              </h2>
+              </h3>
 
               <div className="my-8 text-center">
                 <Link
                   href="/contact-us/"
-                  className="flex w-fit items-center bg-orange-500 hover:bg-black mx-auto rounded-full overflow-hidden font-semibold text-white transition"
+                  className="flex items-center bg-orange-500 hover:bg-black mx-auto rounded-full w-fit overflow-hidden font-semibold text-white transition"
                 >
                   <span className="flex justify-center items-center bg-gray-100 ml-1 rounded-full w-14 h-14">
                     <svg
@@ -191,7 +203,7 @@ export default function LogoBusinessCard() {
                     </svg>
                   </span>
 
-                  <span className="px-6 py-4 text-lg tracking-wide">
+                  <span className="px-6 py-4 font-[700] text-[20px] tracking-wide">
                     CONTACT US
                   </span>
                 </Link>
