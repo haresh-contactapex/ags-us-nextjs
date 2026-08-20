@@ -4,6 +4,8 @@ import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { submitContactForm } from "@/api/contactApi";
 import Recaptcha from "@/components/Recaptcha";
+import seperatorOne from "@/assets/images/page_seperator_cwd1.png";
+import Image from "next/image";
 
 // Where to send people after a successful submit
 const THANK_YOU_URL = "/thank-you";
@@ -139,25 +141,32 @@ const Contact = () => {
   return (
     <>
       <section className="bg-[#f9f9f9] py-[40px] lg:py-[60px]">
-        <div className="space-y-24 mx-auto px-6 max-w-[1200px]">
+        <div className="space-y-24 px-6 MainContainer">
           <div className="items-center">
             <div className="aos-init aos-animate" data-aos="fade-left">
-              <h2 className="mb-10 font-playfairdisplay font-normal text-[36px] lg:text-[46px] 2xl:text-[70px] text-center leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">
+              <h2 className="mb-10 font-playfairdisplay font-normal text-[36px] lg:text-[46px] 2xl:text-[46px] text-center leading-[1.2] lg:leading-[1.1] 2xl:leading-[1] mx-auto max-w-[950px]">
                 We are always available to answer your questions.{" "}
               </h2>
             </div>
           </div>
         </div>
       </section>
-
+      {/* Section 1 */}
+      <Image
+        src={seperatorOne}
+        alt="Seperator Dotted Curve Line"
+        className="hidden xl:block mx-auto mt-[-70px] mb-[-80px] max-w-[400px] translate-x-[10%]"
+      />
       <section className="py-[40px] lg:py-[60px]">
-        <div className="space-y-24 mx-auto px-6 2xl:max-w-[1552px] xl:max-w-[1188px] max-w-7xl">
-          <div className="items-start gap-[20px] md:gap-16 grid md:grid-cols-2">
+        <div className="space-y-24 px-6 MainContainer">
+          <div className="items-start gap-[20px] md:gap-16 block md:grid md:grid-cols-2">
             <div
               className="mb-4 md:mb-0 aos-init aos-animate"
               data-aos="fade-right"
             >
-              <h4 className="mb-3 font-[500] text-[#06283c] text-[24px]">
+              <h1 className="mb-[20px] font-playfairdisplay font-normal text-[36px] lg:text-[46px] 2xl:text-[46px] text-left leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">Contact Us</h1>
+              
+              <h4 className="mb-3 font-[600] text-[#06283c] text-[24px]">
                 Corporate Headquarters
               </h4>
               <p className="mb-3">
@@ -185,7 +194,7 @@ const Contact = () => {
                   info@ApexGlobalSolutions.com
                 </a>
               </p>
-              <h4 className="mb-3 font-[500] text-[#06283c] text-[24px]">
+              <h4 className="mb-3 font-[600] text-[#06283c] text-[24px]">
                 Downtown Los Angeles Office
               </h4>
               <p>
@@ -203,14 +212,11 @@ const Contact = () => {
 
             <div className="aos-init aos-animate" data-aos="fade-left">
               <div className="clear iframe_wrapp">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3302.3967334215195!2d-117.86692778478276!3d34.13619078058322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c326398ae88015%3A0x2b3e04bb91a95aa0!2s115%20E%20Foothill%20Blvd%20%23202%2C%20Glendora%2C%20CA%2091741%2C%20USA!5e0!3m2!1sen!2sin!4v1645598607597!5m2!1sen!2sin"
-                  width="600"
-                  height="450"
-                  className="border-0 w-full pointer-events-none"
-                  allowFullScreen=""
-                  loading="lazy"
-                ></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3302.398041734084!2d-117.86469939999999!3d34.1361573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c7b469003235%3A0x516c243bd8839bb4!2sApex%20Global%20Solutions!5e0!3m2!1sen!2sin!4v1787225558581!5m2!1sen!2sin" 
+                width="600" height="450" 
+                style={{ border: 0 }} allowFullScreen="" loading="lazy" 
+                referrerPolicy="strict-origin-when-cross-origin"/>           
+                
               </div>
             </div>
           </div>
@@ -221,7 +227,7 @@ const Contact = () => {
         <div className="space-y-24 mx-auto mb-10 px-6 2xl:max-w-[1552px] xl:max-w-[1188px] max-w-7xl">
           <div className="items-center">
             <div className="aos-init aos-animate" data-aos="fade-left">
-              <h2 className="mx-auto mb-10 max-w-[800px] font-playfairdisplay font-normal text-[36px] lg:text-[46px] 2xl:text-[70px] text-center leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">
+              <h2 className="mx-auto mb-10 max-w-[800px] font-playfairdisplay font-normal text-[36px] lg:text-[46px] 2xl:text-[46px] text-center leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">
                 Send us mail
               </h2>
             </div>
