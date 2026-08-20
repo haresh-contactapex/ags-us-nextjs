@@ -208,7 +208,7 @@ const Contact = () => {
                   width="600"
                   height="450"
                   className="border-0 w-full pointer-events-none"
-                  allowfullscreen=""
+                  allowFullScreen=""
                   loading="lazy"
                 ></iframe>
               </div>

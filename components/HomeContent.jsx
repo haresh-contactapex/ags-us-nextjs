@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Aos from "aos";
 import "aos/dist/aos.css";
@@ -8,6 +9,9 @@ import images from "@/assets/images/images";
 import { submitQuoteRequest } from "@/api/contactApi";
 import Recaptcha from "@/components/Recaptcha";
 import Image from "next/image";
+
+// Where to send people after a successful submit
+const THANK_YOU_URL = "/thank-you";
 
 const initialFormData = {
   first_name: "",
@@ -18,9 +22,27 @@ const initialFormData = {
 };
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const PHONE_PATTERN = /^[0-9+\-() ]{7,20}$/;
+//const PHONE_PATTERN = /^[0-9+\-() ]{7,20}$/;
+
+// Matches (XXX) XXX-XXXX where the area code and exchange can't start with 0 or 1 (NANP rules)
+const PHONE_PATTERN = /^\([2-9]\d{2}\) [2-9]\d{2}-\d{4}$/;
+
+// Turns whatever the user types/pastes into "(626) 610-3333" as they go
+const formatUSPhone = (value) => {
+  let digits = String(value).replace(/\D/g, "");
+
+  // Drop a leading country code, e.g. "1 626 610 3333" or "+1..."
+  if (digits.length > 10 && digits.startsWith("1")) digits = digits.slice(1);
+  digits = digits.slice(0, 10);
+
+  if (digits.length === 0) return "";
+  if (digits.length < 4) return `(${digits}`;
+  if (digits.length < 7) return `(${digits.slice(0, 3)}) ${digits.slice(3)}`;
+  return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`;
+};
 
 export default function Home() {
+  const router = useRouter();
   const [formData, setFormData] = useState(initialFormData);
   const [errors, setErrors] = useState({});
   const [submitting, setSubmitting] = useState(false);
@@ -37,9 +59,13 @@ export default function Home() {
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
+
+    let nextValue = type === "checkbox" ? checked : value;
+    if (name === "phone") nextValue = formatUSPhone(value);
+
     setFormData((prev) => ({
       ...prev,
-      [name]: type === "checkbox" ? checked : value,
+      [name]: nextValue,
     }));
     setErrors((prev) => ({ ...prev, [name]: undefined }));
   };
@@ -61,7 +87,7 @@ export default function Home() {
     if (!formData.phone.trim()) {
       newErrors.phone = "Phone is required.";
     } else if (!PHONE_PATTERN.test(formData.phone.trim())) {
-      newErrors.phone = "Enter a valid phone number.";
+      newErrors.phone = "Enter a valid US phone number, e.g. (626) 610-3333.";
     }
 
     if (!formData.service) newErrors.service = "Please select a service.";
@@ -81,6 +107,10 @@ export default function Home() {
     setSubmitting(true);
     setStatus(null);
 
+    // Stays true after a successful send so the button remains locked while
+    // Next.js navigates away instead of flashing back to "SEND".
+    let redirecting = false;
+
     try {
       const response = await submitQuoteRequest({
         first_name: formData.first_name.trim(),
@@ -97,6 +127,9 @@ export default function Home() {
           "Thank you! Your request has been submitted successfully.",
       });
       setFormData(initialFormData);
+      setErrors({});
+      redirecting = true;
+      router.push(THANK_YOU_URL);
     } catch (error) {
       const serverErrors = error?.response?.data?.data?.errors;
       if (serverErrors) setErrors((prev) => ({ ...prev, ...serverErrors }));
@@ -107,9 +140,11 @@ export default function Home() {
           "Something went wrong. Please try again later.",
       });
     } finally {
-      setSubmitting(false);
-      setRecaptchaToken("");
-      recaptchaRef.current?.reset();
+      if (!redirecting) {
+        setSubmitting(false);
+        setRecaptchaToken("");
+        recaptchaRef.current?.reset();
+      }
     }
   };
 
@@ -661,12 +696,15 @@ export default function Home() {
                     </div>
                     <div>
                       <input
-                        className="bg-transparent p-4 border border-gray-400 focus:border-gray-600 focus:outline-none w-full"
-                        placeholder="Phone*"
-                        type="text"
+                        type="tel"
+                        inputMode="numeric"
+                        autoComplete="tel"
+                        maxLength={14}
+                        placeholder="Phone* (626) 610-3333"
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
+                        className="bg-white px-4 border border-[#828483] w-full h-14"
                       />
                       {errors.phone && (
                         <p className="mt-1 text-red-500 text-sm">
