@@ -759,14 +759,6 @@ export default function Home() {
 
                     {/* Reset Button */}
                   </div>
-                  <button
-                    type="button"
-                    _onClick={handleReset}
-                    style={buttonStyle}
-                    className="bg-[#f3763a] hover:bg-[#032539] hover:opacity-90 py-4 pr-[32px] pl-[81px] rounded-full font-semibold text-white transition"
-                  >
-                    RESET
-                  </button>
                 </form>
               </div>
               {/* form end */}
