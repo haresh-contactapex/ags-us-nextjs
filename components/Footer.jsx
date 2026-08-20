@@ -264,12 +264,17 @@ const Footer = () => {
       </div>
 
       {/* COPYRIGHT */}
-      <div className="mt-7 font-[500] text-[#333] text-[15px] text-slate-500 text-center">
-        Copyright © 2003-2026{" "}
-        <span className="font-bold text-slate-700">
-          Apex Global Solutions
-        </span>
+      <div className="mt-7 font-[500] text-[#333] text-[16px] text-slate-500 text-center">
+        
+        <p className="text-[16px]">
+          Copyright © 2003-2026{" "}
+          <span className="font-bold text-slate-700">Apex Global Solutions</span>
         . All Rights Reserved.
+        </p>
+        <p className="text-[16px]">
+          <a href="https://www.apexglobalsolutions.com/" className="font-[600] hover:text-[#f3763a] text-[#333333]" target="_blank">Los Angeles Web Development</a> - AGS
+        </p>
+        
       </div>
     </footer>
   );
