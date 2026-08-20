@@ -138,7 +138,7 @@ export default function Home() {
             src={images.bannerImage.src}
             width={609}
             height={538}
-          />         
+          />
         </div>
       </section>
       {/* ================= WHAT WE DO ================= */}
@@ -408,8 +408,8 @@ export default function Home() {
         src={images.homeSeperatorThree.src}
         className="hidden xl:block mx-auto mt-[-50px] mb-[-170px] max-w-[442px] translate-x-[0%]"
         width={1200}
-              height={800}
-              alt="Seperator Dotted Line"
+        height={800}
+        alt="Seperator Dotted Line"
       />
       {/* ===================APPS SECTION==================== */}
       <section className="bg-[#f9f9f9] py-[40px] lg:py-[60px]">
@@ -428,13 +428,13 @@ export default function Home() {
               <p>
                 We are a successful app development company that caters to all
                 your needs. Whether you are in the need of iOS Apps or Android
-                Apps, our 
-                {" "}<Link
-                    className="font-semibold text-[#f3763a] hover:text-[#06283c]"
-                    href="/mobile-app-development"
-                  >
-                    mobile phone app development services
-                  </Link>{" "}
+                Apps, our{" "}
+                <Link
+                  className="font-semibold text-[#f3763a] hover:text-[#06283c]"
+                  href="/mobile-app-development"
+                >
+                  mobile phone app development services
+                </Link>{" "}
                 will transform your business in a manner unimagined. We
                 amalgamate the latest technologies while bringing to you
                 top-notch and customized products each time.
@@ -503,7 +503,7 @@ export default function Home() {
                   className="rotate-[270deg] origin-center animate-rotate-inverse"
                   src={images.ourMethodologyOne.src}
                   width={1200}
-              height={800}
+                  height={800}
                   alt="Concept Image"
                 />
               </div>
@@ -513,8 +513,8 @@ export default function Home() {
                 src={images.methodologyArrow.src}
                 className="lg:top-[70px] xl:top-[103px] right-[-97px] static lg:absolute mt-[52px] lg:mt-[0px] text-yellow-500 text-2xl rotate-90 lg:rotate-0 -translate-y-1/2"
                 width={120}
-              height={80}
-              alt="Methodology Arrow"
+                height={80}
+                alt="Methodology Arrow"
               />
             </div>
             {/* Step 2 */}
@@ -525,17 +525,16 @@ export default function Home() {
                   src={images.ourMethodologyTwo.src}
                   alt="Methodology Step 2"
                   width={1200}
-              height={800}
-
+                  height={800}
                 />
               </div>
               <p className="mt-4 font-semibold text-gray-700">DESIGN</p>
               <Image
                 src={images.methodologyArrow.src}
                 className="lg:top-[70px] xl:top-[103px] right-[-97px] static lg:absolute mt-[52px] lg:mt-[0px] text-yellow-500 text-2xl rotate-90 lg:rotate-0 -translate-y-1/2"
-              width={120}
-              height={80}
-              alt="Methodology Arrow"
+                width={120}
+                height={80}
+                alt="Methodology Arrow"
               />
             </div>
             {/* Step 3 */}
@@ -566,7 +565,7 @@ export default function Home() {
                   src={images.ourMethodologyFour.src}
                   alt="Methodology Step 4"
                   width={1200}
-              height={800}
+                  height={800}
                 />
               </div>
               <p className="mt-4 font-semibold text-gray-700">LAUNCH</p>
@@ -588,7 +587,7 @@ export default function Home() {
                 src={images.requestQuoteImage.src}
                 alt="Request a Quote"
                 width={1200}
-              height={800}
+                height={800}
               />
 
               <div className="flex flex-col justify-center align-middle">
@@ -760,6 +759,14 @@ export default function Home() {
 
                     {/* Reset Button */}
                   </div>
+                  <button
+                    type="button"
+                    _onClick={handleReset}
+                    style={buttonStyle}
+                    className="bg-[#f3763a] hover:bg-[#032539] hover:opacity-90 py-4 pr-[32px] pl-[81px] rounded-full font-semibold text-white transition"
+                  >
+                    RESET
+                  </button>
                 </form>
               </div>
               {/* form end */}
@@ -804,11 +811,13 @@ export default function Home() {
                 </Link>
               </div>
               <div className="text-center">
-                <Image className="mx-auto" src={images.cycleImage.src} 
-                alt="Cycle Image"
-                width={428}
-              height={202}
-              />
+                <Image
+                  className="mx-auto"
+                  src={images.cycleImage.src}
+                  alt="Cycle Image"
+                  width={428}
+                  height={202}
+                />
               </div>
             </div>
           </div>
