@@ -165,11 +165,50 @@
   
   
   
+body { 
+ 
+} 
+.request-btn {
+  @apply 
+  fixed
+  right-[-5px]
+  top-[calc(50%-76.5px)]
+  z-[999]
+  rounded-l-[12px]
+  bg-[#f37032]
+  pr-[5px]
+  transition-[right]
+  duration-500
+  hover:right-0
+}
+
+     
+  /* body {
+    overflow-x:hidden;
+  }
+  .request-btn {
+      padding: 0px 5px 0px 0px;
+      background-color: #f37032;
+      border-radius: 12px 0px 0px 12px;
+      position: fixed;
+      right: -5px;
+      top: calc(50% - 76.50px);      
+      z-index: 999;
+      transition: right 0.5s;
+  }
+  .request-btn:
+      hover {
+      right: 0px;
+  } */
+  
+  
+  
   
 }
 
 body {
   font-family: var(--font-montserrat);
+  overflow-x: hidden;
 }
 b,
 strong {
