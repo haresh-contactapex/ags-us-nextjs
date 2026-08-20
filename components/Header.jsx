@@ -30,6 +30,12 @@ const Header = () => {
     setActive(active === menu ? null : menu);
   };
 
+  // Close the mobile menu (and any open submenu) — called when a link is clicked
+  const closeMobileMenu = () => {
+    setOpen(false);
+    setActive(null);
+  };
+
   // Main Menu
   const menuData = [
     {
@@ -288,6 +294,7 @@ const Header = () => {
           <div className="lg:hidden top-[20px] relative space-y-4 bg-white px-6 py-4 border-t">
             <Link
               href="/"
+              onClick={closeMobileMenu}
               aria-current={isLinkActive("/") ? "page" : undefined}
               className={`block font-medium ${
                 isLinkActive("/")
@@ -336,6 +343,7 @@ const Header = () => {
                           <Link
                             key={index}
                             href={item.link}
+                            onClick={closeMobileMenu}
                             aria-current={itemActive ? "page" : undefined}
                             className={
                               itemActive
