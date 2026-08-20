@@ -18,7 +18,7 @@ export default function AboutPage() {
       <section className="bg-[#f9f9f9] py-[40px] lg:py-[60px]">
         <div className="space-y-24 px-6 MainContainer">
           <div className="aos-init aos-animate" data-aos="fade-left">
-            <h2 className="mb-10 font-playfairdisplay font-normal text-[36px] lg:text-[46px] 2xl:text-[46px] text-center leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">
+            <h2 className="mb-10 font-playfairdisplay font-normal text-[36px] lg:text-[46px] 2xl:text-[46px] text-center leading-[1.2] lg:leading-[1.1] 2xl:leading-[1] mx-auto max-w-[940px]">
               Bespoke web solutions that work in the favor of your business
             </h2>
             <p className="mx-auto max-w-[900px] text-[#06283b] text-[18px] lg:text-[24px] text-center leading-[1.5]">
@@ -40,9 +40,9 @@ export default function AboutPage() {
       />
       <section className="py-[40px] lg:py-[60px]">
         <div className="space-y-24 px-6 MainContainer">
-          <div className="items-center gap-[20px] md:gap-16 grid md:grid-cols-2">
+          <div className="items-center gap-[20px] md:gap-[30px] grid md:grid-cols-2">
             <Image
-              className="mx-auto 2xl:max-w-[600px] aos-init aos-animate"
+              className="mx-auto aos-init aos-animate w-[100%] "
               data-aos="fade-left"
               src={bannerPosterImage}
               alt="Who We Are"
