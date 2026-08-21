@@ -165,7 +165,7 @@ const Header = () => {
 
   return (
     <>
-      <Link href="/contact-us/" className="request-btn">
+      <Link href="/request-a-quote/" className="request-btn">
         <Image src={RequestButton} alt="Request a Quote" />
       </Link>
       <header

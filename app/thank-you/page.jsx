@@ -17,7 +17,7 @@ export default function TexasPage() {
           <div className="items-center">
             <div data-aos="fade-left">
               <p className="text-center text-[80px] font-[800] text-[#4BB543]">
-                <i class="fa-solid fa-check"></i>{" "}
+                <i className="fa-solid fa-check"></i>{" "}
               </p>
               <h1 className="mb-10 font-playfairdisplay font-normal text-[36px] lg:text-[46px] 2xl:text-[46px] text-center leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">
                 Thank You

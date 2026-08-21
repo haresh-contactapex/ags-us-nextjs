@@ -725,8 +725,14 @@ export default function Home() {
                         Services*
                       </option>
                       <option value="Web Development">Web Development</option>
-                      <option value="UI/UX Design">UI/UX Design</option>
-                      <option value="SEO">SEO</option>
+                      <option value="Graphics Design">Graphics Design</option>
+                      <option value="App Development">App Development</option>
+                      <option value="Digital Marketing">
+                        Digital Marketing
+                      </option>
+                      <option value="Software Development">
+                        Software Development
+                      </option>
                     </select>
                     {errors.service && (
                       <p className="mt-1 text-red-500 text-sm">
