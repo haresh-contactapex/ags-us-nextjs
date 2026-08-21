@@ -8,7 +8,7 @@ import seperatorOne from "@/assets/images/page_seperator_cwd1.png";
 import Image from "next/image";
 
 // Where to send people after a successful submit
-const THANK_YOU_URL = "/thank-you";
+const THANK_YOU_URL = "/thank-you?mode=contact-us";
 
 const initialFormData = {
   first_name: "",
@@ -164,8 +164,10 @@ const Contact = () => {
               className="mb-4 md:mb-0 aos-init aos-animate"
               data-aos="fade-right"
             >
-              <h1 className="mb-[20px] font-playfairdisplay font-normal text-[36px] lg:text-[46px] 2xl:text-[46px] text-left leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">Contact Us</h1>
-              
+              <h1 className="mb-[20px] font-playfairdisplay font-normal text-[36px] lg:text-[46px] 2xl:text-[46px] text-left leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">
+                Contact Us
+              </h1>
+
               <h4 className="mb-3 font-[600] text-[#06283c] text-[24px]">
                 Corporate Headquarters
               </h4>
@@ -212,11 +214,15 @@ const Contact = () => {
 
             <div className="aos-init aos-animate" data-aos="fade-left">
               <div className="clear iframe_wrapp">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3302.398041734084!2d-117.86469939999999!3d34.1361573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c7b469003235%3A0x516c243bd8839bb4!2sApex%20Global%20Solutions!5e0!3m2!1sen!2sin!4v1787225558581!5m2!1sen!2sin" 
-                width="600" height="450" 
-                style={{ border: 0 }} allowFullScreen="" loading="lazy" 
-                referrerPolicy="strict-origin-when-cross-origin"/>           
-                
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3302.398041734084!2d-117.86469939999999!3d34.1361573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c7b469003235%3A0x516c243bd8839bb4!2sApex%20Global%20Solutions!5e0!3m2!1sen!2sin!4v1787225558581!5m2!1sen!2sin"
+                  width="600"
+                  height="450"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                />
               </div>
             </div>
           </div>

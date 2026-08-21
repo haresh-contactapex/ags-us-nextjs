@@ -11,7 +11,7 @@ import Recaptcha from "@/components/Recaptcha";
 import Image from "next/image";
 
 // Where to send people after a successful submit
-const THANK_YOU_URL = "/thank-you";
+const THANK_YOU_URL = "/thank-you?mode=request-a-quote";
 
 const initialFormData = {
   first_name: "",

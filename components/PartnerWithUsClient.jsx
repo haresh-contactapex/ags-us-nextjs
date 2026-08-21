@@ -9,7 +9,7 @@ import { submitPartnerRequest } from "@/api/contactApi";
 import Recaptcha from "@/components/Recaptcha";
 
 // Where to send people after a successful submit
-const THANK_YOU_URL = "/thank-you";
+const THANK_YOU_URL = "/thank-you?mode=partner-with-us";
 
 const initialFormState = {
   name: "",
