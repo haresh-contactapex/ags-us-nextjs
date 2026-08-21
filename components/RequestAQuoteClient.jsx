@@ -185,18 +185,20 @@ export default function RequestAQuoteClient() {
       <Image
         src={seperatorImage}
         alt=""
-        className="hidden xl:block mx-auto mt-[-50px] mb-[-80px] max-w-[400px] translate-x-[10%]"
+        className="hidden xl:block mx-auto mt-[-50px] mb-[-60px] max-w-[400px] translate-x-[10%]"
       />
 
       {/* SEC 2 start — form */}
-      <section className="bg-[#f9f9f9] py-[40px] lg:py-[60px]">
+      <section className="bg-[#ffffff] py-[40px] lg:py-[60px]">
+
+
         <div className="aos-init aos-animate items-center" data-aos="fade-left">
           {/* form start */}
-          <div className="p-0 md:p-8 w-full md:max-w-4xl">
+          <div className="p-0 md:p-8 w-full md:max-w-4xl MainContainer mx-auto pl-[25px] pr-[25]">
             {/* Title */}
-            <h3 className="mb-10 font-serif text-[36px] text-slate-800 lg:text-[48px] 2xl:text-[48px] text-center leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">
+            {/* <h3 className="mb-10 font-serif text-[36px] text-slate-800 lg:text-[48px] 2xl:text-[48px] text-center leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">
               Request a Quote
-            </h3>
+            </h3> */}
             {/* Form */}
             <form className="space-y-6" onSubmit={handleSubmit} noValidate>
               {/* Row 1 */}
