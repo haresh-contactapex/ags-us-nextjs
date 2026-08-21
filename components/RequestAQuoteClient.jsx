@@ -194,7 +194,7 @@ export default function RequestAQuoteClient() {
 
         <div className="aos-init aos-animate items-center" data-aos="fade-left">
           {/* form start */}
-          <div className="p-0 md:p-8 w-full md:max-w-4xl MainContainer mx-auto">
+          <div className="p-0 md:p-8 w-full md:max-w-4xl MainContainer mx-auto pl-[25px] pr-[25]">
             {/* Title */}
             {/* <h3 className="mb-10 font-serif text-[36px] text-slate-800 lg:text-[48px] 2xl:text-[48px] text-center leading-[1.2] lg:leading-[1.1] 2xl:leading-[1]">
               Request a Quote
