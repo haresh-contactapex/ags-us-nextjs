@@ -7,6 +7,37 @@ import { usePathname } from "next/navigation";
 import Logo from "@/assets/images/apex_logo.png";
 import RequestButton from "@/assets/images/requset-btn.svg";
 
+// ---------------------------------------------------------------------------
+// Menu icons — add your SVG files at these paths (assets/images/icons/*.svg).
+// Rename the files to match, or update the paths below to match your files.
+// ---------------------------------------------------------------------------
+import ResponsiveWebIcon from "@/assets/images/icons/responsive-web-development.svg";
+import EcommerceIcon from "@/assets/images/icons/ecommerce-website-development.svg";
+import CustomWebIcon from "@/assets/images/icons/custom-web-development.svg";
+import WordpressIcon from "@/assets/images/icons/wordpress-website-development.svg";
+import WebsiteRedesignIcon from "@/assets/images/icons/website-redesign.svg";
+import WebsiteMaintenanceIcon from "@/assets/images/icons/website-maintenance.svg";
+import WebsiteSecurityIcon from "@/assets/images/icons/website-security.svg";
+
+import LogoDesignIcon from "@/assets/images/icons/logo-business-card-design.svg";
+import RebrandingIcon from "@/assets/images/icons/rebranding-services.svg";
+import BrochureIcon from "@/assets/images/icons/brochure-design.svg";
+import BannersPostersIcon from "@/assets/images/icons/banners-posters-design.svg";
+import WebBannerIcon from "@/assets/images/icons/web-banner-design.svg";
+
+import MobileAppIcon from "@/assets/images/icons/mobile-app-development.svg";
+import NativeIOSIcon from "@/assets/images/icons/native-ios-apps.svg";
+import NativeAndroidIcon from "@/assets/images/icons/native-android-apps.svg";
+import HybridAppIcon from "@/assets/images/icons/hybrid-app-development.svg";
+
+import SEOIcon from "@/assets/images/icons/search-engine-optimization.svg";
+import PPCIcon from "@/assets/images/icons/pay-per-click.svg";
+import SocialMediaIcon from "@/assets/images/icons/social-media-marketing.svg";
+
+import SaaSIcon from "@/assets/images/icons/saas-application-development.svg";
+import CMSIcon from "@/assets/images/icons/content-management-systems.svg";
+import DesktopSoftwareIcon from "@/assets/images/icons/desktop-software.svg";
+
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState(null);
@@ -44,31 +75,45 @@ const Header = () => {
       items: [
         {
           name: "Responsive Web Development",
+          description: "Make your website shine on every screen",
           link: "/responsive-web-development",
+          icon: ResponsiveWebIcon,
         },
         {
           name: "E-commerce Website Development",
+          description: "Custom online stores built to convert",
           link: "/ecommerce-web-development",
+          icon: EcommerceIcon,
         },
         {
           name: "Custom Web Development",
+          description: "Let's build your website from scratch",
           link: "/custom-web-development",
+          icon: CustomWebIcon,
         },
         {
           name: "Wordpress Website Development",
+          description: "WordPress has been our core forte",
           link: "/wordpress-web-development",
+          icon: WordpressIcon,
         },
         {
           name: "Website Redesign",
+          description: "Give your brand a fresh new look",
           link: "/website-redesign-los-angeles",
+          icon: WebsiteRedesignIcon,
         },
         {
           name: "Website Maintenance",
+          description: "Stay on top with constant upkeep",
           link: "/website-maintenance",
+          icon: WebsiteMaintenanceIcon,
         },
         {
           name: "Website Security",
+          description: "Don't let security gaps wreck your name",
           link: "/website-security",
+          icon: WebsiteSecurityIcon,
         },
       ],
     },
@@ -78,23 +123,33 @@ const Header = () => {
       items: [
         {
           name: "Logo & Business Card Design",
+          description: "A unique identity your brand deserves",
           link: "/logo-business-card-design",
+          icon: LogoDesignIcon,
         },
         {
           name: "Rebranding Services",
+          description: "Speak to your audience in a brand new way",
           link: "/rebranding-services",
+          icon: RebrandingIcon,
         },
         {
           name: "Brochure Design",
+          description: "Stunning designs that drive action",
           link: "/brochure-design",
+          icon: BrochureIcon,
         },
         {
           name: "Banners & Posters Design",
+          description: "Get ahead of your competition",
           link: "/banners-posters-design",
+          icon: BannersPostersIcon,
         },
         {
           name: "Web Banner Design",
+          description: "Make every click count",
           link: "/web-banner-design",
+          icon: WebBannerIcon,
         },
       ],
     },
@@ -104,19 +159,27 @@ const Header = () => {
       items: [
         {
           name: "Mobile App Development",
+          description: "Keep your business at your customer's fingertips",
           link: "/mobile-app-development",
+          icon: MobileAppIcon,
         },
         {
           name: "Native iOS Apps",
+          description: "One-stop solution for top native iOS apps",
           link: "/native-ios-apps",
+          icon: NativeIOSIcon,
         },
         {
           name: "Native Android Apps",
+          description: "Cutting-edge apps for the Android platform",
           link: "/native-android-apps",
+          icon: NativeAndroidIcon,
         },
         {
           name: "Hybrid App Development",
+          description: "One app, every platform, best experience",
           link: "/hybrid-app-development",
+          icon: HybridAppIcon,
         },
       ],
     },
@@ -126,15 +189,21 @@ const Header = () => {
       items: [
         {
           name: "Search Engine Optimization",
+          description: "Make your website's backbone stronger",
           link: "/search-engine-optimization",
+          icon: SEOIcon,
         },
         {
           name: "Pay Per Click (PPC Campaigns)",
+          description: "Reach out to millions with PPC advertising",
           link: "/pay-per-click-services",
+          icon: PPCIcon,
         },
         {
           name: "Social Media Marketing",
+          description: "Let us create some social media fire",
           link: "/social-media-marketing",
+          icon: SocialMediaIcon,
         },
       ],
     },
@@ -144,15 +213,21 @@ const Header = () => {
       items: [
         {
           name: "SaaS Application Development",
+          description: "Become the modern age SaaS leader",
           link: "/saas-application-development",
+          icon: SaaSIcon,
         },
         {
           name: "Content Management Systems (CMS)",
+          description: "Experience the best of content management",
           link: "/content-management-systems",
+          icon: CMSIcon,
         },
         {
           name: "Desktop Software",
+          description: "Genuine desktop software at your disposal",
           link: "/desktop-software",
+          icon: DesktopSoftwareIcon,
         },
       ],
     },
@@ -231,7 +306,7 @@ const Header = () => {
                       </Link>
 
                       <div
-                        className={`hidden group-hover:block top-10 absolute space-y-2 bg-white shadow-xl p-4 rounded-lg min-w-[330px] ${
+                        className={`hidden group-hover:block top-10 absolute space-y-4 bg-white shadow-xl p-5 rounded-lg min-w-[360px] max-w-[380px] ${
                           isLastMenu ? "right-0" : "left-0"
                         }`}
                       >
@@ -242,13 +317,31 @@ const Header = () => {
                               key={index}
                               href={item.link}
                               aria-current={itemActive ? "page" : undefined}
-                              className={`block font-[500] text-[15px] ${
-                                itemActive
-                                  ? "text-[#f3763a] font-[700]"
-                                  : "text-[#333] hover:text-[#f3763a]"
-                              }`}
+                              className="group/item flex items-start gap-3"
                             >
-                              {item.name}
+                              {item.icon && (
+                                <img
+                                  src={item.icon.src}
+                                  alt=""
+                                  className="shrink-0 mt-0.5 w-6 h-6"
+                                />
+                              )}
+                              <span>
+                                <span
+                                  className={`block font-[600] text-[15px] leading-[1.3] ${
+                                    itemActive
+                                      ? "text-[#f3763a]"
+                                      : "text-[#333] group-hover/item:text-[#f3763a]"
+                                  }`}
+                                >
+                                  {item.name}
+                                </span>
+                                {item.description && (
+                                  <span className="block mt-0.5 text-[#888] text-[12px] leading-[1.4]">
+                                    {item.description}
+                                  </span>
+                                )}
+                              </span>
                             </Link>
                           );
                         })}
@@ -336,7 +429,7 @@ const Header = () => {
                   </button>
 
                   {active === menu.key && (
-                    <div className="flex flex-col space-y-2 mt-2 pl-4 font-[500] text-[15px]">
+                    <div className="flex flex-col space-y-3 mt-2 pl-4 font-[500] text-[15px]">
                       {menu.items.map((item, index) => {
                         const itemActive = isLinkActive(item.link);
                         return (
@@ -345,13 +438,24 @@ const Header = () => {
                             href={item.link}
                             onClick={closeMobileMenu}
                             aria-current={itemActive ? "page" : undefined}
-                            className={
-                              itemActive
-                                ? "text-[#f3763a] font-[700]"
-                                : "text-[#333333] hover:text-[#f3763a]"
-                            }
+                            className="flex items-start gap-2"
                           >
-                            {item.name}
+                            {item.icon && (
+                              <img
+                                src={item.icon.src}
+                                alt=""
+                                className="shrink-0 mt-0.5 w-5 h-5"
+                              />
+                            )}
+                            <span
+                              className={
+                                itemActive
+                                  ? "text-[#f3763a] font-[700]"
+                                  : "text-[#333333] hover:text-[#f3763a]"
+                              }
+                            >
+                              {item.name}
+                            </span>
                           </Link>
                         );
                       })}
