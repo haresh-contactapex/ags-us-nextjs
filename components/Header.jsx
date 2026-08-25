@@ -75,43 +75,43 @@ const Header = () => {
       items: [
         {
           name: "Responsive Web Development",
-          description: "Make your website shine on every screen",
+          description: "Make Suitability Your Website Essence",
           link: "/responsive-web-development",
           icon: ResponsiveWebIcon,
         },
         {
           name: "E-commerce Website Development",
-          description: "Custom online stores built to convert",
+          description: "Custom E-commerce Solutions, well-suited to your business needs",
           link: "/ecommerce-web-development",
           icon: EcommerceIcon,
         },
         {
           name: "Custom Web Development",
-          description: "Let's build your website from scratch",
+          description: "Let's design your magical mark",
           link: "/custom-web-development",
           icon: CustomWebIcon,
         },
         {
           name: "Wordpress Website Development",
-          description: "WordPress has been our core forte",
+          description: "Wordpress Website Development has been our core forte",
           link: "/wordpress-web-development",
           icon: WordpressIcon,
         },
         {
           name: "Website Redesign",
-          description: "Give your brand a fresh new look",
+          description: "Align Your Brand and Look Good on the Outside",
           link: "/website-redesign-los-angeles",
           icon: WebsiteRedesignIcon,
         },
         {
           name: "Website Maintenance",
-          description: "Stay on top with constant upkeep",
+          description: "Stay on the top by constant maintenance",
           link: "/website-maintenance",
           icon: WebsiteMaintenanceIcon,
         },
         {
           name: "Website Security",
-          description: "Don't let security gaps wreck your name",
+          description: "Don't Let Security Gaps Wreck Your Name",
           link: "/website-security",
           icon: WebsiteSecurityIcon,
         },
@@ -123,31 +123,31 @@ const Header = () => {
       items: [
         {
           name: "Logo & Business Card Design",
-          description: "A unique identity your brand deserves",
+          description: "Identify Yourself Amongst Many",
           link: "/logo-business-card-design",
           icon: LogoDesignIcon,
         },
         {
           name: "Rebranding Services",
-          description: "Speak to your audience in a brand new way",
+          description: "Be The Quickest Modified Brand",
           link: "/rebranding-services",
           icon: RebrandingIcon,
         },
         {
           name: "Brochure Design",
-          description: "Stunning designs that drive action",
+          description: "Drive People To Action By Stunning Designs",
           link: "/brochure-design",
           icon: BrochureIcon,
         },
         {
           name: "Banners & Posters Design",
-          description: "Get ahead of your competition",
+          description: "Get Ahead Of Your Competition",
           link: "/banners-posters-design",
           icon: BannersPostersIcon,
         },
         {
           name: "Web Banner Design",
-          description: "Make every click count",
+          description: "Let us make everyone online—your customer",
           link: "/web-banner-design",
           icon: WebBannerIcon,
         },
@@ -159,7 +159,7 @@ const Header = () => {
       items: [
         {
           name: "Mobile App Development",
-          description: "Keep your business at your customer's fingertips",
+          description: "Don't Be An Old-Time Business",
           link: "/mobile-app-development",
           icon: MobileAppIcon,
         },
@@ -171,13 +171,13 @@ const Header = () => {
         },
         {
           name: "Native Android Apps",
-          description: "Cutting-edge apps for the Android platform",
+          description: "Cutting-edge applications and solutions for your business",
           link: "/native-android-apps",
           icon: NativeAndroidIcon,
         },
         {
           name: "Hybrid App Development",
-          description: "One app, every platform, best experience",
+          description: "Hybrid App services for the best customer experience",
           link: "/hybrid-app-development",
           icon: HybridAppIcon,
         },
@@ -189,22 +189,26 @@ const Header = () => {
       items: [
         {
           name: "Search Engine Optimization",
-          description: "Make your website's backbone stronger",
+          description: "Make Your Website's Backbone Stronger With SEO",
           link: "/search-engine-optimization",
           icon: SEOIcon,
         },
         {
           name: "Pay Per Click (PPC Campaigns)",
-          description: "Reach out to millions with PPC advertising",
+          description: "Reach Out Millions With Pay Per Click Advertising",
           link: "/pay-per-click-services",
           icon: PPCIcon,
         },
         {
           name: "Social Media Marketing",
-          description: "Let us create some social media fire",
+          description: "Let Us Create Some Social Media Fire",
           link: "/social-media-marketing",
           icon: SocialMediaIcon,
-        },
+        },       
+     
+        
+        
+        
       ],
     },
     {
@@ -213,19 +217,19 @@ const Header = () => {
       items: [
         {
           name: "SaaS Application Development",
-          description: "Become the modern age SaaS leader",
+          description: "We help you become the modern age SaaS leaders",
           link: "/saas-application-development",
           icon: SaaSIcon,
         },
         {
           name: "Content Management Systems (CMS)",
-          description: "Experience the best of content management",
+          description: "Experience best of the content management Systems with us",
           link: "/content-management-systems",
           icon: CMSIcon,
         },
         {
           name: "Desktop Software",
-          description: "Genuine desktop software at your disposal",
+          description: "Genuine desktop software services at your disposal",
           link: "/desktop-software",
           icon: DesktopSoftwareIcon,
         },
@@ -306,7 +310,7 @@ const Header = () => {
                       </Link>
 
                       <div
-                        className={`hidden group-hover:block top-10 absolute space-y-4 bg-white shadow-xl p-5 rounded-lg min-w-[360px] max-w-[380px] ${
+                        className={`hidden group-hover:block top-10 absolute space-y-4 bg-white shadow-xl p-5 rounded-lg min-w-[370px] max-w-[380px] ${
                           isLastMenu ? "right-0" : "left-0"
                         }`}
                       >
@@ -317,18 +321,18 @@ const Header = () => {
                               key={index}
                               href={item.link}
                               aria-current={itemActive ? "page" : undefined}
-                              className="group/item flex items-start gap-3"
+                              className="group/item flex items-center gap-3"
                             >
                               {item.icon && (
                                 <img
                                   src={item.icon.src}
                                   alt=""
-                                  className="shrink-0 mt-0.5 w-6 h-6"
+                                  className="shrink-0 mt-0.5 w-[46px] h-[46px]"
                                 />
                               )}
                               <span>
                                 <span
-                                  className={`block font-[600] text-[15px] leading-[1.3] ${
+                                  className={`block font-[500] text-[14px] leading-[1.3] ${
                                     itemActive
                                       ? "text-[#f3763a]"
                                       : "text-[#333] group-hover/item:text-[#f3763a]"
@@ -337,7 +341,7 @@ const Header = () => {
                                   {item.name}
                                 </span>
                                 {item.description && (
-                                  <span className="block mt-0.5 text-[#888] text-[12px] leading-[1.4]">
+                                  <span className="block mt-0.5 text-[#888] text-[11px] font-[500] leading-[1.4]">
                                     {item.description}
                                   </span>
                                 )}
