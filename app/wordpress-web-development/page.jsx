@@ -5,9 +5,9 @@ import seperatorImage from "@/assets/images/page_seperator_cwd1.png";
 import wordpressDevelopment from "@/assets/images/wordpress-development.jpg";
 
 export const metadata = {
-  title: "WordPress Web Development",
+  title: "Wordpress Website Development Company in Los Angeles",
   description:
-    "Custom WordPress builds, themes, and plugin development from Apex Global Solutions.",
+    "Apex Global Solutions is Los Angeles based wordpress web development company specializing in custom theme design and plugin development.",
   alternates: { canonical: "/wordpress-web-development" },
 };
 

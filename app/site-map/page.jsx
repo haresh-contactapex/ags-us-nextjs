@@ -4,8 +4,8 @@ import checkImage from "@/assets/images/check.png";
 import check2Image from "@/assets/images/check2.png";
 
 export const metadata = {
-  title: "Site Map",
-  description: "Browse all pages on the Apex Global Solutions website.",
+  title: "Sitemap - Web Design and Development Company in Los Angeles",
+  description: "Sitemap of Apex Global Solutions is an affordable custom website development, web design, graphic design, app development and SEO Services.",
   alternates: { canonical: "/site-map" },
 };
 

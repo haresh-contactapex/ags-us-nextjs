@@ -3,9 +3,9 @@ import Image from "next/image";
 import seperatorImage from "@/assets/images/page_seperator_cwd1.png";
 
 export const metadata = {
-  title: "Texas Web Design & Digital Marketing | Apex Global Solutions",
+  title: "Texas Web Development and Website Design Company",
   description:
-    "Apex Global Solutions helps businesses across Texas grow online through web design, web development, and digital marketing services.",
+    "Looking for web development services in Texas? Apex Global Solutions is leading website design Company offers custom website development, web design and SEO Services.",
 };
 
 export default function TexasPage() {

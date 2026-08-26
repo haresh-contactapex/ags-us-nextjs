@@ -6,9 +6,9 @@ import seperatorImage from "@/assets/images/page_seperator_cwd1.png";
 import webSecurity from "@/assets/images/website-security.jpg";
 
 export const metadata = {
-  title: "Website Security",
+  title: "Website Security Services in Los Angeles",  
   description:
-    "Protect your site from threats with proactive website security services from Apex Global Solutions.",
+    "Apex Global Solutions is protecting the integrity of your website and web applications. We provide extra security and protection with integrating SSL encryption.",    
   alternates: { canonical: "/website-security" },
 };
 

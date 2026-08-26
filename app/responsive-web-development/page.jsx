@@ -6,9 +6,9 @@ import bannerImage from "@/assets/images/responsive-web-development.jpg";
 import seperatorOne from "@/assets/images/page_seperator_cwd1.png";
 
 export const metadata = {
-  title: "Responsive Web Development",
+  title: "Responsive Web Development and Website Design in Los Angeles",
   description:
-    "Websites that look and work great on every device — responsive web development services from Apex Global Solutions.",
+    "Apex Global Solutions is top-notch responsive web development company in Los Angeles, we build clean and mobile-friendly responsive websites for our clients.",
   alternates: {
     canonical: "/responsive-web-development",
   },

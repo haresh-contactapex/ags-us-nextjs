@@ -6,9 +6,11 @@ import seperatorImage from "@/assets/images/page_seperator_cwd1.png";
 import webMaintenance from "@/assets/images/website-maintenance.jpg";
 
 export const metadata = {
-  title: "Website Maintenance",
+  title: "Website Maintenance Services and Web Maintenance in Los Angeles",
+  
   description:
-    "Keep your site fast, secure, and up to date with ongoing website maintenance services from Apex Global Solutions.",
+    "Apex Global Solutions is provides on-going website maintenance services in Los Angeles. Our expert team maintains your website, including website security, and server support.",
+    
   alternates: { canonical: "/website-maintenance" },
 };
 

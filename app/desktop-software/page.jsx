@@ -7,7 +7,7 @@ export const metadata = {
   title: "Desktop Software Development Company in Los Angeles, CA",
   description:
     "Apex Global Solutions Company is expert in making best software for desktop application development in Los Angeles, California.",
-};
+}; 
 
 export default function DesktopSoftwarePage() {
   return (

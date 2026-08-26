@@ -341,7 +341,13 @@ const Header = () => {
                                   {item.name}
                                 </span>
                                 {item.description && (
-                                  <span className="block mt-0.5 text-[#888] text-[11px] font-[500] leading-[1.4]">
+                                  <span 
+                                        className={`block mt-0.5 text-[11px] font-[500] leading-[1.4] transition-colors ${
+                                          itemActive
+                                            ? "text-[#f3763a]" 
+                                            : "text-[#888] group-hover/item:text-[#f3763a]"
+                                        }`}
+                                      >
                                     {item.description}
                                   </span>
                                 )}

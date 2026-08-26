@@ -6,9 +6,9 @@ import customWebDevImage from "@/assets/images/custom-web-development.jpg";
 import checkImage from "@/assets/images/check.png";
 
 export const metadata = {
-  title: "Custom Web Development",
+  title: "Custom Web Design and Development Company in Los Angeles",
   description:
-    "Tailor-made websites built around your business goals — custom web development services from Apex Global Solutions.",
+    "Apex Global Solutions offers custom web development and website design services in Los Angeles. Our expert team provides customized web solutions as per requirements.",
   alternates: { canonical: "/custom-web-development" },
 };
 

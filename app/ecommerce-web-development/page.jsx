@@ -6,9 +6,9 @@ import ecomWebImage from "@/assets/images/e-commerce-website.jpg";
 import checkImage from "@/assets/images/check.png";
 
 export const metadata = {
-  title: "E-Commerce Web Development",
+  title: "E-Commerce Website Design and Development in Los Angeles",
   description:
-    "Custom e-commerce stores built to convert — online store development services from Apex Global Solutions.",
+    "Apex Global Solutions is the best ecommerce website development company in Los Angeles. We specialize in creating user-friendly websites for ecommerce business.",
   alternates: { canonical: "/ecommerce-web-development" },
 };
 

@@ -8,9 +8,9 @@ import seperatorOne from "@/assets/images/page_seperator_cwd1.png";
 
 
 export const metadata = {
-  title: "Website Redesign Los Angeles",
+  title: "Website Redesign Services and Web Design Company in Los Angeles",
   description:
-    "Modernize your online presence with expert website redesign services in Los Angeles from Apex Global Solutions.",
+    "Apex Global Solutions is a website redesign company in Los Angeles. We provide fully responsive websites that impact on the success of your business.",    
   alternates: { canonical: "/website-redesign-los-angeles" },
 };
 

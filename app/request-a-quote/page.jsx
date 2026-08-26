@@ -1,9 +1,9 @@
 import RequestAQuoteClient from "@/components/RequestAQuoteClient";
 
 export const metadata = {
-  title: "Request a Quote - Apex Global Solutions",
+  title: "Request a Quote - Website Design and Development in Los Angeles",
   description:
-    "Join our winning team of Apex Global Solution. We have been establishing ourselves for almost 10 years, and we’ve enjoyed our work and the clients we come across.",
+    "Please fill out this request a quote form for web development, website design and digital marketing services. We will get back to you within 24 hours.",
 };
 
 export default function RequestAQuotePage() {
