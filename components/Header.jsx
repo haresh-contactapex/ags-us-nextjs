@@ -326,7 +326,7 @@ const Header = () => {
                               {item.icon && (
                                 <img
                                   src={item.icon.src}
-                                  alt=""
+                                  alt={item.name}
                                   className="shrink-0 mt-0.5 w-[46px] h-[46px]"
                                 />
                               )}
